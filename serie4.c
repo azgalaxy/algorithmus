@@ -53,36 +53,45 @@ void max(void) {
 void matrice(void)
 {
     bool valeur_trouve;
+    int d = 0 ;
+    int e = 0;
 
 
     int n = get_int("Entrer le nombre de lignes: ");
     int m = get_int("Entrer le nombre de colones: ");
-
-    for (int i= 0;i<n ;i++)
+    int matrice[n][m];
+    for (d= 0;d<n ;d++)
     {
-      for (int j =0;j<m;j++)
+      for ( e =0;e<m;e++)
       {
-        matrice[i][j] = get_int("Entrer un nombre");
+        matrice[d][e] = get_int("Entrer un nombre");
       }
     }
 
     int valeur_utilisateur = get_int("Entrer la valeur a rechercher: ");
 
-    int j = 0;
-    int i = 0;
+    int  j = 0;
+    int  i = 0;
     valeur_trouve = false;
 
-    for (int i = 0; i < n && !valeur_trouve; i++) {
-    // Boucle sur les colonnes
-    for (int j = 0; j < m && !valeur_trouve; j++) {
-      // Si la valeur est trouvée
-      if (matrice[i][j] == valeur_utilisateur) {
-        valeur_trouve = true;
+    for ( i = 0; i < n && !valeur_trouve; i++) {
+      for ( j = 0; j < m && !valeur_trouve; j++) {
+
+        if (matrice[i][j] == valeur_utilisateur) {
+          valeur_trouve = true;
+          break;
       }
     }
   }
 
-
+  if (valeur_trouve)
+  {
+    printf("La valeur a été trouvée à la position (%d, %d).\n", i, j);
+  }
+  else
+  {
+    printf("La valeur n'a pas été trouvée.\n");
+  }
 }
 
 
