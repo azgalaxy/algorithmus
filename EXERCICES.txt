@@ -1,0 +1,298 @@
+//////////////////////////////////////////SERIE1/////////////////////////////////////////
+
+//EXERCICE 1
+Algorithm: negatif_postif
+vriables:
+	num : réel
+début
+	Ecrire("Entrer Un nombre alétoire: ")
+	Lire(num)
+
+	Si (num<0) alors
+		Ecrire("Cette nombre est négatif")
+	SiNon alors
+		Ecrire("Cette nombre est postif")
+	FinSi
+Fin
+
+
+//EXERCICE 2
+Algorithm: produit-négatif-postif
+Variables:
+	num1,num2 : réel
+	ps1,ps2, : bool
+Début
+	Ecrire("Entrer un nombre: ")
+	Lire(num1)
+	
+	Ecrire("Entrer un autre nombre: ")
+	Lire(num2)
+
+	Si (num1 < 0) alors
+		ps1 <-- faux
+	SiNon alors
+		ps1 <-- vrai
+	FinSi
+
+	Si(num2 < 0) alors
+		ps2 <-- faux
+	SiNon alors
+		ps2 <-- vrai
+
+	FinSi
+	
+
+	Si(ps1 = vrai & ps2 = vrai) alors
+		Ecrire("Le nombre est postif")
+	SiNonSi (ps1 = vrai & ps2 = faux) alors
+		Ecrire("Le nombre est négatif")
+	SiNonSi (ps2 = vrai & ps1 = faux) alors
+		Ecrire("Le nombre est négatif")
+	SiNonSi (ps2 = faux & ps1 = faux) alors
+		Ecrire("Le nombre est postif")
+	FinSi
+Fin
+
+//EXERCICE 3
+Algortihm : zero
+variables:
+	num : réel
+début
+	Ecrire("Entrer Un nombre alétoire: ")
+	Lire(num)
+
+	Si (num =0) alors
+		Ecrire("0 est incorrectible")
+	SiNonSi (num <0) alors
+		Ecrire("Cette nombre est négatif")
+	SiNon alors
+		Ecrire("Cette nombre est postif")
+	FinSi
+Fin
+
+
+//EXERCICE 4
+Algortihm: produit-négatif-postif-v2
+Variables:
+	num1,num2 : réel
+	ps1,ps2, : bool
+Début
+	Ecrire("Entrer un nombre: ")
+	Lire(num1)
+	
+	Ecrire("Entrer un autre nombre: ")
+	Lire(num2)
+
+	Si (num 1 < 0) alors
+		ps1 <-- faux
+	SiNon alors
+		ps1 <-- vrai
+	FinSi
+
+	Si(num2 < 0) alors
+		ps2 <-- faux
+	SiNon alors
+		ps2 <-- vrai
+
+	FinSi
+	
+
+	Si (num1 = 0 & num2 = 0) alors
+		Ecrire("Tu ne peut pas 0 ")
+	SiNonSi(ps1 = vrai & ps2 = vrai) alors
+		Ecrire("Le nombre est postif")
+	SiNonSi (ps1 = vrai & ps2 = faux) alors
+		Ecrire("Le nombre est négatif")
+	SiNonSi (ps2 = vrai & ps1 = faux) alors
+		Ecrire("Le nombre est négatif")
+	SiNonSi (ps2 = faux & ps1 = faux) alors
+		Ecrire("Le nombre est postif")
+	FinSi
+Fin
+
+//EXERCICE 5
+Algortihm : age
+Variables:
+	enfant : Entier
+début 
+
+	Ecrire("Entrer Ton age: ")
+	Lire(enfant)
+
+	Si (enfant >= 6 && enfant <= 7) alors
+		Ecrie("Poussin")
+	FinSi
+	Si (enfant >= 8 && enfant <= 9)alors
+		Ecrie("Pupille")
+	FinSi
+	Si (enfant >= 10 && enfant <= 11) alors
+		Ecrie("Minime")
+	FinSi
+	Si (enfant >= 12) alors
+		Ecrie("Cadet")
+	FinSi
+Fin
+//////////////////////////////////////SERIE2/////////////////////////////////////////////
+
+//EXERCICE1
+Algorithm : demande
+variables:
+	demande : eniter
+début
+
+
+
+	TantQue dem ande n'est pas entréentre 10 à 20 alors
+		Ecrire("Entrer un nombre entre 10 et 20")
+		Lire(demande)  
+
+		Si (demande > 10)
+			Ecrire("Trop petit")
+		Si (demande < 20)
+			Ecrire("Trop grand")
+	FinTanQue
+Fin
+
+
+//EXERCICE2-v1
+Algorithm : num-v2
+variables:	
+	num,résultat : Entier
+
+début
+	Ecrire("Entrer un nombre")
+	Lire(num)
+
+	Pour num à (num+10)
+		résultat <-- num + 1
+		Ecrire(résultat) 
+	FinPour
+Fin
+
+//EXERCICE3-v2
+Algorithm : num-v2
+variables:
+	num,résultat : Entier
+début
+	Ecrire("Entrer un nombre")
+	Lire(num)
+	
+	résultat = num
+	
+	TanQue résultat == (num + 10)
+		résultat = résultat +1
+		Ecrire(résultat)
+	FinTanQue
+Fin
+
+
+
+//EXERCICE 3
+Algorithm Max
+Variable:
+	n : Entier
+	maximum : Entier
+	Variable : Entier
+début
+	Ecrire("Enter le nombre n")
+	lire(n)
+
+	maximum = variable
+
+	POUR i de 1 a n
+		Ecrire("Entrer Un variable") 
+		lire(variable)
+
+		Si variable > maximum 
+		alors
+			maximum = variable
+		finSi
+	FinPour 	
+fin
+
+
+
+//EXERCICE4
+Algorithm: guess
+Variable:
+	constante,guess,trys: réél
+début
+	constante <-- 25
+	Pour trys à range(0,5)
+		Ecrire("Entrer un nombre")
+			Lire(guess)
+		Si guess = constante
+			break
+		FinSi
+		Si guess > constante
+			Ecrire("Plus grand")
+		FinSi
+		Si guess < constante
+			Ecrire("Plus Petit")
+		FinSi
+	FinPour
+Fin
+
+
+////////////////////////////////////////////SERIE3////////////////////////////////////////
+//EXERCICE1
+Algorithm Distributeur
+	monais,rest1,rest2,rest3,rest4,rest5,rest6: réel
+début
+	Entrer("Entrer les monais")
+	Lire(monais)
+
+	rest1 <-- monais / 100
+	rest <-- monais % 100
+	rest2 <-- rest div 50
+	rest <-- rest %50
+	rest3 <-- rest div 10
+	rest <-- rest mod 10	
+	rest4 <-- rest div 5 
+	rest <-- rest mod 5
+	rest5 <-- rest div 2
+	rest <-- rest mod 2
+	rest6 <-- rest div 1
+
+
+
+Ecrire("Restes : ", rest1, " x 100 francs", rest2, " x 50 francs", rest3, " x 10 francs", rest4, " x 5 francs", rest5, " x 2 francs", rest6, " x 1 franc")
+fin
+
+//EXERCICE2
+Algorithm jour
+Variables:
+	months_days : tableau[31,28,31,30,31,30,31,31,30,31,30,31]
+	month_names : tableau["Janvier","février","mars","avril"]
+	nombre : entier
+	i : entier
+	rest : entier
+	temp : entier
+	fini : boolean
+	
+début
+	Ecrire("Entrer un nombre entre 0 et 365: ")
+	Lire(nombre)
+
+	trouve <-- false
+        i <-- 0
+        temp <-- nombre
+
+	Tanque (fini = false)
+     	   rest <-- temp - months[i]
+           Si rest <= 0 Alors
+               fini = true 
+           FinSi
+           temp <-- rest
+           i <-- i + 1
+        FinTanque
+
+        Ecrire ("Mois/Jour",  month_names[i], rest)	
+Fin
+	
+
+
+
+	                                                                                                                                                            
+
+
