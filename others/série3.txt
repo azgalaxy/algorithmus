@@ -1,0 +1,194 @@
+exercice 2 : 
+Algorithm Prix
+   var : prix , nombre réels
+début 
+   écrire("entrer le nombre d'articles")
+   lire(nombres)
+   s <-- 0
+   pour i de 0 a nombres faire 
+     écrire("entrer le prix de chaque article")
+	 lire(prix)
+	 s <--- s + prix
+   fin pour
+   écrire("le prix des articles est : " , s)
+fin
+
+exercice 3 (v1) :
+Algorithm EntierSuccessifs
+    var : 
+	  nombre : entier 
+début 
+   écrire("entrer un nombre : ")
+   lire(nombre)
+   Pour i de nombre+1 à nombre+10 Faire 
+	écrire(i)
+   finPour 
+fin
+
+exercice 3 (v2) :
+Algorithm Entier-successifs-paires
+    var : nombre , i  entier 
+début 
+   i <-- 0
+   écrire("entrer un nombre : ")
+   lire(nombre)
+   tanque (i<10) faire
+     nombre <-- nombre+1
+     si(nombre mod 2) == 0 alors
+      écrire(nombre)
+	  i <-- i+1
+	 fin si
+	fin tanque
+fin 
+
+exercice 4 (v1) :
+Algorithm Somme
+    var : nombre entier 
+début 
+    écrire("enter un nombre : ")
+	lire(nombre)
+	s <-- nombre
+	pour i de 0 a nombre faire 
+      s <-- s + i	
+	  écrire (" la somme est :" , s)
+	fin pour
+fin
+
+exercice 4 (v2) : 
+Algorithm Produit
+    var : nombre entier 
+début 
+    écrire("enter un nombre : ")
+	lire(nombre)
+	s <-- 1
+	pour i de 1 a nombre faire 
+      s <-- s * i	
+	  écrire (" le produit est :" , s)
+	fin pour
+fin
+
+exercice 5 : 
+Algorithm Factorielle 
+    var : n entier
+début  
+    répeter 
+	  écrire("entrer un entier n positif")
+	  lire(n)
+	jusqu'a (n=>0)
+	s <-- 1
+	si (n>0) alors
+	  pour i de 2 a n faire
+        s <-- s*i
+    sinon 
+      s <-- 1
+    fin si 
+    écrire("nombre! = " , s)	
+fin
+
+exercice 6 (v1) :
+Algorithm minimum 
+    var : nombre , min , n entiers
+début 
+    écrire("entrer un entier n : ")
+	lire(n)
+	min <--0
+	pour i de 0 a nombre faire
+     écrire("entrer un nombre : ")
+	 lire(nombre)	 
+	 min <-- nombre
+	 si (nombre<min) alors
+	   min <-- nombre
+	 fin si
+	fin pour
+	écrire("le minimum est : ")
+fin
+
+exercice 6 (v2) :
+Algorithm minimum 
+    var : index , nombre , min , n entiers
+début 
+    écrire("entrer un entier n : ")
+	lire(n)
+	index <--0
+	min <--0
+	pour i de 0 a nombre faire
+     écrire("entrer un nombre : ")
+	 lire(nombre)	 
+	 min <-- nombre
+	 si (nombre<min) alors
+	   min <-- nombre
+	   index <--i+1
+	 fin si
+	fin pour
+	écrire("le minimum est : " , min)
+	écrire("l'index est : " , index) 
+fin
+	 
+     	 
+
+exercice 6 (v3) :
+Algorithm minimum 
+    var : index , nombre , min , n entiers
+début 
+	index <--0
+	min <--0
+	tanque (nombre !=0) faire
+     écrire("entrer un nombre : ")
+	 lire(nombre)	 
+	 min <-- nombre
+	 si (nombre<min) alors
+	   min <-- nombre
+	   index <--i
+	 fin si
+	fin tanque
+	écrire("le minimum est : " , min)
+	écrire("l'index est : " , index) 
+fin
+
+exercice 7 :
+Algorithm Premier
+    var : index , nombre , diviseur entier
+début
+    écrire("entrer un nombre : ")
+    lire(nombre)
+	index <-- 1
+	diviseur <-- 0
+    tanque (index < (nombre/2)) faire
+	  si (nombre mod i) == 0 faire
+	   index <-- index+1
+	   diviseur <-- diviseur + 1 
+      sinon 
+        index <-- index +1 
+      fin si 
+    fin 
+    si diviseur != 0 alors
+      écrire(" nombre n'est pas premier ")
+    sinon 
+      écrire(" nombre est premier")
+    fin si
+fin	
+
+exercice 8 :
+Algorithm Code_pin
+    var : code , tentative entier
+début 
+     tentative <-- 0
+     répeter
+      écrire("entrer un entier : ")
+	  lire(code)
+	  tentative <-- tentative + 1 
+	 jusqu'a (code>1000 et code<9999 tentative = 3)
+fin
+	 
+	 
+	 
+	 
+
+
+	   
+   	 
+
+
+
+	 
+   
