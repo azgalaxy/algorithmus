@@ -1,0 +1,133 @@
+exercice 1 :
+la 4 eme proposition est correcte car elle prend comme paramétres les 3 variables a,b,t c et nous retourne 
+un entier qui présente la somme et un réél qui correxpond à la moyenne.
+
+exercice2 : 
+
+fonction min(a:entier , b:entier) : entier 
+    var
+	  min : entier 
+début 
+    min <-- a 
+	si (b < min) alors
+	  min <-- b
+	retourner min
+fin 
+
+fonction max(a:entier , b:entier) : entier  
+    var 
+	  max : entier
+début
+    max <-- a
+	si (b > max) alors
+	  max <-- b
+	retourner max
+fin
+
+fonction min_4(a:entier , b:entier , c:entier , d:entier):entier
+    var :
+	  t : tableau de [3] entiers
+	  min : entier
+début  
+    t[0] <-- a
+	t[1] <-- b
+	t[2] <-- c
+	t[3] <-- d
+	
+	min <--t[0]
+	
+	pour i de 0 à 3 faire
+	 si (t[i] < min) faire
+	   min <-- t[i]
+	 finSi
+	finPour
+fin
+
+
+fonction max_4(a:entier , b:entier , c:entier , d:entier):entier
+    var :
+	  t : tableau de [3] entiers
+	  max : entier
+début  
+    t[0] <-- a
+	t[1] <-- b
+	t[2] <-- c
+	t[3] <-- d
+	
+	max <--t[0]
+	
+	pour i de 0 à 3 faire
+	 si (t[i] > max) faire
+	   max <-- t[i]
+	 finSi
+	finPour
+fin
+
+
+début    
+   écrire("entrer un entier :")
+   lire(a)
+   écrire("entrer un entier :")
+   lire(b)
+   écrire("entrer un entier :")
+   lire(c)
+   écrire("entrer un entier :")
+   lire(d)   
+   
+   maximum1 <-- max(a,b)
+   minimum1 <-- min(c,d)
+   maximum4 <-- max_4(a,b,c,d) 
+   minimum4 <-- min_4(a,b,c,d) 
+fin     
+
+exercice 3 :
+
+ Procédure(t:tableau , size:entier ,@T1:tbleau)
+   Var 
+      i, j, n, clé : Entier;
+      T : d'entiers ;
+   Début
+    Pour i de 1 à n-1 // on commence par le 2ème élément (début de la partie non triée)
+      T[i];
+      j i - 1 ; // indice du 1er élément à droite de la partie triée
+      Tant que ((j >= 0) ET (clé < T[j])) Faire
+         T[j +1] T[j]; // Décalage
+         j j - 1;
+      FinTant que
+      T[j +1] clé; // Insertion de la clé
+    finPour        
+ fin
+
+
+Algorithm student
+   Structure student 
+	  numéro : entier 
+	  nom : chaine 
+	  prénom : chaine 
+	  moyenne_de_bac : réél 
+   FinStructure
+		
+début 	 
+	 var 
+        tableau students[size]: Structure Information
+
+    pour i de 0 a size faire 
+      écrire("entrer votre numéro")
+	  lire (Student[i].numéro)
+      écrire("entrer le nom ")
+	  lire (Student[i].nom)
+      écrire("entrer le prénom ")
+	  lire (Student[i].prénom)	  
+      écrire("entrer la moyenne du bac")
+	  lire (Student[i].moyenne_de_bac)	  
+	finPour
+	
+	pour i de 0 a size faire 
+	  printf(Student[i])
+	finPour	
+	
+	tri_Insertion(Student[i])	
+fin	
+   
+	
+	  
