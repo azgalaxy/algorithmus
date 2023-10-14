@@ -1,0 +1,83 @@
+exercice 1 :
+Algorithm vérification
+    var :
+	  nombre : entier
+début 
+    répeter 
+	  écrire("entrer un entier enter 10et 20")
+	  lire(nombre)
+	  si (nombre >20) alors
+	   écrire("plus petit!")
+	  sinon si (nombre < 10) alors
+	   écrire("lus grand")
+	  finSi
+	jusqu'à (10<= nombre <= 20)
+fin
+
+exercice 2 (v1) :
+Algorithm nombreSuccessifs 
+    var:
+	  nombre entier
+début
+    écrire("entrer un nombre de départ")
+	lire(nombre)
+	pour i de 0 à 10 faire
+	  nombre <-- nombre + i
+	  écrire("les nombres sont : " , nombre)
+	finPour
+fin
+
+exercice 2 (v2) :
+Algorithm nombreSuccessifs 
+    var:
+	  nombre,i : entier
+début
+    écrire("entrer un nombre de départ")
+	lire(nombre)
+	tantque (i<10)
+	  nombre <-- nombre + i
+	  i <-- i+1
+	  écrire("les nombres sont : " , nombre)
+	finTantque
+fin
+
+exercice 3 :
+Algorithm nombresPosition
+    var :
+	  x , max , nombre , i : entier
+début
+    écrire("donnr un nombre x")
+    lire(x)
+    max <-- x 
+    tantque (i<19) faire
+     écrire("donnr un nombre ")
+     lire(nombre)
+     si(nombre > max) alors 
+       max <-- nombre
+	   écrire(i)
+	 fin si 
+     i <-- i+1
+	fin tantque
+	écrire(max)
+fin
+
+exercice 4 : 
+Algorithm jeu
+    var :
+	  constante , proposition , tentative entier
+début 
+    constante <-- 10
+	tentative <-- 0
+	tantque (tentative <5) faire
+	  écrire("donner une proposition :")
+	  lire(proposition)
+	  si (proposition > constante) faire
+	    écrire("plus petit!")
+		tentative <-- tentative +1
+	  sinon si (proposition < constante) faire
+        écrire("plus grand")	  
+		tentative <-- tentative +1
+	  finSi
+    jusqu'à (tentative == 5) ou (proposition == constante)
+fin	
+    
