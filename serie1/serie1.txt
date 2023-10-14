@@ -1,0 +1,101 @@
+// EXERCICE 1
+Algorithme Nombre_negatif_ou_postif_v1
+Variables:
+	num : entier
+Début
+	Ecrire("Entrez un nombre : ")
+	Lire(num)
+
+	Si num < 0 Alors
+		Ecrire("Le nombre est négatif")
+	SiNon 
+		Si num > 0 Alors
+	    	Ecrire("Le nombre est positif")
+		FinSi	
+	FinSi
+Fin
+
+// EXERCICE 2
+Algorithme Produit_negatif_ou_positif_v1
+Variables:
+	num1, num2 : entier
+Début
+	Ecrire("Entrez un nombre: ")
+	Lire(num1)
+	
+	Ecrire("Entrez un autre nombre: ")
+	Lire(num2)
+
+	Si (num1 > 0 ET num2 > 0) OU (num1 < 0 ET num2 < 0) Alors
+		Ecrire("Le produit est postif")
+	SiNon 
+		Si (num1 < 0 ET num2 > 0) OU (num1 > 0 ET num2 < 0) Alors
+			Ecrire("Le produit est négatif")
+		FinSi			
+	FinSi
+Fin
+
+//EXERCICE 3
+Algorithme Nombre_negatif_ou_positif_v2
+Variables:
+	num : entier
+Début
+	Ecrire("Entrez un nombre: ")
+	Lire(num)
+
+	Si num = 0 alors
+		Ecrire("Le nombre 0 n'est ni négatif ni positif")
+	SiNon
+	   Si num < 0 Alors
+		  Ecrire("Le nombre est négatif")
+	   SiNon 
+		  Ecrire("Le nombre est positif")
+	   FinSi
+	FinSi   
+Fin
+
+//EXERCICE 4
+Algorithme Produit_negatif_ou_positif_v2
+Variables:
+	num1,num2 : entier
+	ps1,ps2, : bool
+Début
+	Ecrire("Entrez un nombre: ")
+	Lire(num1)
+	
+	Ecrire("Entrer un autre nombre: ")
+	Lire(num2)
+
+	Si num1 = 0 OU num2 = 0 Alors
+		Ecrire("Le produit est 0")
+	SiNon 
+		Si (num1 > 0 ET num2 > 0) OU (num1 < 0 ET num2 < 0) Alors
+			Ecrire("Le produit est postif")
+		SiNon 
+			Ecrire("Le produit est négatif")
+		FinSi			
+	FinSi
+Fin
+
+//EXERCICE 5
+Algorithme Categorie_age
+Variables:
+	age : entier
+Début 
+	Ecrire("Entrez l'age d'un enfant: ")
+	Lire(age)
+
+	Si age >= 6 ET age <= 7 Alors
+		Ecrire("La catégorie de l'enfant est Poussin")
+	SiNon
+	    Si age >= 8 ET age <= 9 Alors
+		   Ecrire("La catégorie de l'enfant est Pupille")
+		SiNon
+			Si age >= 10 ET age <= 11 Alors
+  		  	   Ecrire("La catégorie de l'enfant est Minime")
+			SiNon
+  		  	   Ecrire("La catégorie de l'enfant est Cadet")
+			FinSi
+		FinSi
+	FinSi
+Fin

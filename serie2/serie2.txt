@@ -1,0 +1,89 @@
+//EXERCICE1
+Algorithme Nombre_entre_10_et_20
+Variables:
+	nombre : eniter
+Début
+	TantQue nombre < 10 ET nombre > 20 Faire
+		Ecrire("Entrez un nombre entre 10 et 20: ")
+		Lire(nombre)  
+
+		Si (nombre < 10)
+			Ecrire("Plus grand !")
+		Si (demande > 20)
+			Ecrire("Plus petit !")
+	FinTanQue
+Fin
+
+//EXERCICE2-v1
+Algorithme Dix_nombres_suivants_v1
+Variables:	
+	nombre : entier
+	compteur : entier
+Début
+	Ecrire("Entrez un nombre: ")
+	Lire(nombre)
+
+	Pour compteur de 1 à 10
+		Ecrire(nombre + compteur) 
+	FinPour
+Fin
+
+//EXERCICE3-v2
+Algorithm Dix_nombres_suivants_v2
+Variables:
+	nombre : entier
+	compteur : entier
+début
+	Ecrire("Entrez un nombre: ")
+	Lire(num)
+	
+	compteur <-- 1
+	
+	TanQue compteur <= 10
+		Ecrire(nombre + compteur) 
+		compteur <-- compteur + 1
+	FinTanQue
+Fin
+
+//EXERCICE 3
+Algorithme Plus_grand_nombre
+Variables:
+	compteur : entier
+	maximum : entier
+	nombre : entier
+début
+	Pour compteur de 1 à 20
+		Ecrire("Entrez un nombre: ") 
+		lire(nombre)
+
+		Si nombre > maximum Alors
+			maximum = nombre
+		FinSi
+	FinPour 	
+
+	Ecrire("Le plus grand nombre parmi les 20 nombres entrés est: ", maximum) 
+Fin
+
+//EXERCICE4
+Algorithme deviner_valeur_constante_v1
+Constantes:
+	nombre_a_deviner <-- 25
+Variables:
+	nombre_proposé, tentatives: entier
+début
+	Pour tentatives de 1 à 5 
+		Ecrire("Proposez un nombre")
+		Lire(nombre_proposé)
+		
+		Si nombre_proposé = nombre_a_deviner Alors
+			Ecrire("Bravo, nombre deviné")
+		SiNon
+		   Si nombre_proposé < nombre_a_deviner Alors
+		   	 Ecrire("Plus grand !")
+		   SiNon
+		      Si nombre_proposé > nombre_a_deviner Alors
+			     Ecrire("Plus Petit !")
+			  FinSi
+		  FinSi  
+	FinPour
+Fin
