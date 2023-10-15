@@ -14,7 +14,7 @@ Début
 		FinSi	
 	FinSi
 Fin
-
+// YOU DIDNT HANDLE THE CASE WHERE BOTH NUMBERS ARE ZERO !!
 // EXERCICE 2
 Algorithme Produit_negatif_ou_positif_v1
 Variables:
