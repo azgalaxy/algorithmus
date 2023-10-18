@@ -1,0 +1,280 @@
+//TD4
+Algorithme Exercice1
+Variable 
+	t : tableau[50]
+	t2inv: tableau[50]
+	counteur: Entier
+	e: Entier
+	i: Entier
+	Finsish: bool
+	d: Entier
+	n: Entier
+	pos2: entier
+	p : entier
+	pos: Entier
+	t_renversé : tableau[]
+	ne : entier
+	TP: tableau[p]
+	TN : tableau[ne]
+	somme:Entier
+	
+début
+	somme <-- 0
+	Tanque e < 50 alors
+		Ecrire("Entrer un nombre entre -30 et 30")
+		Lire(n)
+		Si n > 30 ou n < -30 alors
+			Ecrire("Il faut la valeur entre -30 et 30")
+ 		t[i] = n
+		e = 1+e
+	FinTanQue
+	
+	Pour chaque élément dans T Faire
+    		somme = somme + élément
+	FinPour
+
+	Ecrire("La somme est : ",somme)
+
+
+//TD_4
+ 		Pour i de 0 à 49 an faire 
+		  t2inv[n-i-1] <-- tableau[i] 
+   		FinPour
+
+
+
+//TD4_3
+
+	Pour d de 0 a 50 faire
+		Si i > 0 et i =0  alors
+			TP[p] = tableau[i]
+		Si i < 0 alors
+		   TN[ne] <-- tableau[i] 
+	FinPour
+	
+
+	Pour d de 0  à 49 alors
+		Ecrire(TN[ne])
+	FinPour
+
+	Pour d de 0 à 49 
+		Ecrire(TP[p])
+	FinPour
+
+//TD_4
+	pos <-- 0
+		Pour d de 0 à 49 alors
+			Si TP[p] = 0 alors
+				pos =d
+				break
+		
+			FinSi
+		FinPour
+	FinTanQue
+			
+		pos2 <-- 50 
+		   
+			Pour d de 49 à 0  alors
+				Si TP[p] = 0 alors
+					pos2 = d 
+					break
+				FinSi
+			FinPour
+	nouvelle_liste = []
+##########################################
+	pour  i 49 à 0 faire:
+		t_renv[i] = t[d]
+##################################################
+    	gauche <- 0  
+    	droite <- longueur(t) - 1  
+    	Tant que gauche < droite:
+        	Si tableau[gauche] > 0 et tableau[droite] < 0:
+            		temp <- tableau[gauche]
+            		tableau[gauche] <- tableau[droite]
+            		tableau[droite] <- temp
+       	 	Fin Si
+        	Si t[gauche] < 0:
+            		gauche <- gauche + 1  
+       	 	FinSi
+        	Si t[droite] > 0:
+            		droite <- droite - 1 
+        	FinSi
+    	FinTantQue
+
+
+	
+
+	
+
+	
+	
+
+	
+
+
+
+Fin
+
+
+//EXERCICE2
+Algorithm  EXERCICE2
+Variables:
+	TM[i]: tableau[30]
+	i : Entier
+	c : char
+	conteur: Entier
+	a: entier
+	b: entier
+	c: entier
+	d: entier
+	e: entier
+	f: entier
+	g: entier
+	h: entier
+	i: entier
+	j: entier
+	l: entier
+	m: entier
+	n: entier
+	o: entier
+	p: entier
+	q: entier
+	r: entier
+	s: entier
+	t: entier
+	u: entier
+	v: entier
+	w: entier
+	x: entier
+	y: entier
+	z: entier
+début
+//TD4_2_1,
+	conteur <-- 0
+	Pour i de 0 à 29
+		Ecrire("Entrer un charactére")
+		Lire(c)
+		conteur = conteur + 1  
+		Si TM[i] = 'z' alors
+			break
+		FinSi
+	FinPour	
+
+	Pour i de 0 à 29 
+		Si TM[i] = 'a'
+			a <-- a +1 
+		FinSi
+		
+		Si TM[i] = 'b'
+			b <-- b +1 
+		FinSi
+		
+		Si TM[i] = 'c'
+			c <-- c +1 
+		FinSi
+
+		Si TM[i] = 'd'
+			d <-- d +1 
+		FinSi
+
+		Si TM[i] = 'e'
+			e <-- e +1 
+		FinSi
+
+		Si TM[i] = 'f'
+			i <-- i +1 
+		FinSi
+
+		Si TM[i] = 'g'
+			g <-- g +1 
+		FinSi
+
+		Si TM[i] = 'h'
+			h <-- h +1 
+		FinSi
+
+		Si TM[i] = 'i'
+			i <-- i +1 
+		FinSi
+
+		Si TM[i] = 'j'
+			j <-- j +1 
+		FinSi
+
+		Si TM[i] = 'k'
+			k <-- k +1 
+		FinSi
+
+		Si TM[i] = 'l'
+			l <-- l +1 
+		FinSi
+
+
+		Si TM[i] = 'm'
+			m <-- m +1 
+		FinSi
+		
+		Si TM[i] = 'n'
+			n <-- n +1 
+		FinSi
+
+		Si TM[i] = 'o'
+			o <-- o +1 
+		FinSi
+
+		Si TM[i] = 'p'
+			p <-- p +1 
+		FinSi
+
+		Si TM[i] = 'q'
+			q <-- q +1 
+		FinSi
+
+		Si TM[i] = 'r'
+			r <-- r +1 
+		FinSi
+
+		Si TM[i] = 's'
+			s <-- s +1 
+		FinSi
+
+		Si TM[i] = 't'
+			t <-- t +1 
+		FinSi
+	
+		Si TM[i] = 'u'
+			u <-- u +1 
+		FinSi
+
+		Si TM[i] = 'v'
+			v <-- v +1 
+		FinSi
+
+		Si TM[i] = 'w'
+			w <-- w +1 
+		FinSi
+
+		Si TM[i] = 'x'
+			x <-- x +1 
+		FinSi
+
+		Si TM[i] = 'y'
+			y <-- y +1 
+		FinSi
+
+ 
+		FinSi
+	FinPour
+
+
+
+
+
+
+
+
+
+
+
+	
+	
