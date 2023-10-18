@@ -1,59 +1,56 @@
-#EXERCICE1:
+# EXERCICE1:
 def EXERCICE1():
-    trys = int(input("how much you want to try?: "))
-    for i in range(trys):
-        demande = int(input("Entrer un nombre entre 10 et 20: "))
-        if demande == 0:
-            raise ValueError("0 est incorrectible")
-        if demande > 20:
-            print("Plus grand")
-        if demande < 20:
-            print("Plus petit")
+    while nombre < 10 and nombre > 20:
+        nombre = int(input("Entrez un nombre entre 10 et 20: "))
 
-#EXERCICE2:
+        if nombre < 10:
+            print("Plus grand!")
+        if nombre > 20:
+            print("Plus petit!")
+
+
+# EXERCICE2:
 def ECERCICE2_v1():
     num = int(input("Entrer un nombre: "))
 
-    for num in range(num,num+9):
-        résultat = num + 1
-        print(résultat)
-#EXERCICE2-v2:
+    for compteur in range(1, 10):
+        print(compteur + num)
+
+
+# EXERCICE2-v2:
 def ECERCICE2_v2():
     num = int(input("Entrer un nombre: "))
 
-    counter = 1
-    while counter <= 9:
-        print(num + counter)
-        counter += 1
+    compteur = 1
+    while compteur <= 10:
+        compteur += 1
+        print(num + compteur)
 
 
-#EXERCICE3
+# EXERCICE3
 def EXERCICE3():
-  n = int(input("how much you want to do this: "))
-  list = []
+    for compteur in range(1, 20):
+        nombre = int(input("Entrez un nombre: "))
+
+        if nombre > maximum:
+            maximum = nombre
 
 
-  for i in range(n):
-    variable = int(input("Enter a number: "))
-    list.append(variable)
-
-
-  list.sort()
-  mex = list[-1]
-  print(f"the max number is {mex}")
-
-#EWERCICE4
+# EWERCICE4
 def EXERCICE4():
-    constante = 25
-    trys = int(input("Entrer combien tu veux : "))
-    for i in range(trys):
-        guess =int(input("Entrer un nombre: "))
-        if guess == constante:
-            print("Bravo")
-            break
-        if guess > constante:
-            print("Plus grand")
-        if guess < constante :
-            print("Plus Petit")
+    nombre_à_devinir = 25
+    for tentatives in range(1, 5):
+        nombre_propsé = int(input("Proposser un nombre: "))
 
-EXERCICE4()
+        if nombre_propsé == nombre_à_devinir:
+            print("Bravo,nombre deviné")
+        else:
+            if nombre_propsé < nombre_à_devinir:
+                print("Plus grand !")
+            else:
+                if nombre_propsé > nombre_à_devinir:
+                    print("Plus Petit")
+
+
+ECERCICE2_v2()
+
