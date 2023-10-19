@@ -12,107 +12,100 @@ Variable
 	pos2: entier
 	p : entier
 	pos: Entier
-	t_renversé : tableau[]
+	t_renversé : tableau[]  // Missing the size of the array
 	ne : entier
-	TP: tableau[p]
-	TN : tableau[ne]
-	somme:Entier
+	TP: tableau[p]  // Incorrect, should be tableau[50] or a size variable
+	TN : tableau[ne]  // Incorrect, should be tableau[50] or a size variable
+	somme: Entier
 	
 début
 	somme <-- 0
-	Tanque e < 50 alors
-		Ecrire("Entrer un nombre entre -30 et 30")
+	Tantque e < 50 alors
+		Ecrire("Entrer un nombre entre -30 and 30")
 		Lire(n)
 		Si n > 30 ou n < -30 alors
 			Ecrire("Il faut la valeur entre -30 et 30")
- 		t[i] = n
-		e = 1+e
+		Sinon:
+			t[i] = n
+			i = i + 1
+		FinSi
+		e = e + 1
 	FinTanQue
 	
-	Pour chaque élément dans T Faire
-    		somme = somme + élément
+	Pour i de 0 à 49 faire
+		somme = somme + t[i]
 	FinPour
 
-	Ecrire("La somme est : ",somme)
+	Ecrire("La somme est : ", somme)
 
-
-//TD_4
- 		Pour i de 0 à 49 an faire 
-		  t2inv[n-i-1] <-- tableau[i] 
-   		FinPour
-
-
-
-//TD4_3
-
-	Pour d de 0 a 50 faire
-		Si i > 0 et i =0  alors
-			TP[p] = tableau[i]
-		Si i < 0 alors
-		   TN[ne] <-- tableau[i] 
-	FinPour
-	
-
-	Pour d de 0  à 49 alors
-		Ecrire(TN[ne])
+	// To reverse the array "t"
+	Pour i de 0 à 49 faire
+		t2inv[49 - i] = t[i]
 	FinPour
 
-	Pour d de 0 à 49 
-		Ecrire(TP[p])
+	// Separating positive and negative values
+	ne = 0
+	p = 0
+	Pour i de 0 à 49 faire
+		Si t[i] < 0 alors
+			TN[ne] = t[i]
+			ne = ne + 1
+		Sinon:
+			TP[p] = t[i]
+			p = p + 1
+		FinSi
 	FinPour
 
-//TD_4
-	pos <-- 0
-		Pour d de 0 à 49 alors
-			Si TP[p] = 0 alors
-				pos =d
-				break
-		
-			FinSi
-		FinPour
-	FinTanQue
-			
-		pos2 <-- 50 
-		   
-			Pour d de 49 à 0  alors
-				Si TP[p] = 0 alors
-					pos2 = d 
-					break
-				FinSi
-			FinPour
+	// Print TN
+	Pour d de 0 à ne - 1 faire
+		Ecrire(TN[d])
+	FinPour
+
+	// Print TP
+	Pour d de 0 à p - 1 faire
+		Ecrire(TP[d])
+	FinPour
+
+	// Search for the position of the first zero in TP
+	pos = -1
+	Pour d de 0 à p - 1 faire
+		Si TP[d] == 0 alors
+			pos = d
+			Quitter  // Exit the loop if found
+		FinSi
+	FinPour
+
+	// Search for the position of the last zero in TP
+	pos2 = -1
+	Pour d de p - 1 à 0 step -1 faire
+		Si TP[d] == 0 alors
+			pos2 = d
+			Quitter  // Exit the loop if found
+		FinSi
+	FinPour
+
+	// Create a new list from t
 	nouvelle_liste = []
-##########################################
-	pour  i 49 à 0 faire:
-		t_renv[i] = t[d]
-##################################################
-    	gauche <- 0  
-    	droite <- longueur(t) - 1  
-    	Tant que gauche < droite:
-        	Si tableau[gauche] > 0 et tableau[droite] < 0:
-            		temp <- tableau[gauche]
-            		tableau[gauche] <- tableau[droite]
-            		tableau[droite] <- temp
-       	 	Fin Si
-        	Si t[gauche] < 0:
-            		gauche <- gauche + 1  
-       	 	FinSi
-        	Si t[droite] > 0:
-            		droite <- droite - 1 
-        	FinSi
-    	FinTantQue
+	Pour i de 49 à 0 step -1 faire
+		nouvelle_liste.Ajouter(t[i])
+	FinPour
 
-
-	
-
-	
-
-	
-	
-
-	
-
-
-
+	// Sort the array t
+	gauche <- 0
+	droite <- 49
+	Tantque gauche < droite faire
+		Si t[gauche] > 0 et t[droite] < 0 alors
+			temp <- t[gauche]
+			t[gauche] <- t[droite]
+			t[droite] <- temp
+		FinSi
+		Si t[gauche] < 0 alors
+			gauche <- gauche + 1
+		FinSi
+		Si t[droite] > 0 alors
+			droite <- droite - 1
+		FinSi
+	FinTantQue
 Fin
 
 
