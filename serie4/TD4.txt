@@ -38,12 +38,10 @@ début
 
 	Ecrire("La somme est : ", somme)
 
-	// To reverse the array "t"
 	Pour i de 0 à 49 faire
 		t2inv[49 - i] = t[i]
 	FinPour
 
-	// Separating positive and negative values
 	ne = 0
 	p = 0
 	Pour i de 0 à 49 faire
@@ -55,18 +53,14 @@ début
 			p = p + 1
 		FinSi
 	FinPour
-
-	// Print TN
 	Pour d de 0 à ne - 1 faire
 		Ecrire(TN[d])
 	FinPour
 
-	// Print TP
 	Pour d de 0 à p - 1 faire
 		Ecrire(TP[d])
 	FinPour
 
-	// Search for the position of the first zero in TP
 	pos = -1
 	Pour d de 0 à p - 1 faire
 		Si TP[d] == 0 alors
@@ -75,7 +69,6 @@ début
 		FinSi
 	FinPour
 
-	// Search for the position of the last zero in TP
 	pos2 = -1
 	Pour d de p - 1 à 0 step -1 faire
 		Si TP[d] == 0 alors
@@ -84,13 +77,11 @@ début
 		FinSi
 	FinPour
 
-	// Create a new list from t
 	nouvelle_liste = []
 	Pour i de 49 à 0 step -1 faire
 		nouvelle_liste.Ajouter(t[i])
 	FinPour
 
-	// Sort the array t
 	gauche <- 0
 	droite <- 49
 	Tantque gauche < droite faire
