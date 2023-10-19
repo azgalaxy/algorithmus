@@ -1,0 +1,166 @@
+exercice 1 :
+Algorithm valeursImpaires
+   var :
+     n : entier
+	 T : tableau de 10 entiers
+début
+    n <-- 10
+	pour i de 0 à 10 faire
+	  écrire("T[",i,"]=")
+	  lire (T[i])
+	finPour  
+    pour i de 0 à 10 faire 
+	  si ((T[i] mod 2 ) != 0) alors
+            écrire(T[i])
+	  finSi	
+	finPour
+fin
+
+exercice 2 :
+Algorithm maximum
+    var :
+	   n , index : entier
+	   T: tableau de 10 réels
+	   max : réel
+début
+    n <--10
+	index <--0
+	pour i de 0 à 10 faire
+	  écrire("T[",i,"]=")
+	  lire (T[i])
+	finPour 
+    max <--t[0]
+    pour i de 0 à 10 faire
+       si (T[i]>max) alors :
+         max <-- T[i]
+		 index <-- i 
+	   finSi
+	finPourfin
+fin
+
+exercice 3 :
+Algorithm matrice
+    var : 
+	   nombre , long , larg : entiers
+	   T : matrice de largeur larg et de longeur long .
+début 
+    écrire("entrer la largeur")
+	lire(m)
+	écrire("entrer la longeur")
+	lire(n)
+	écrire("entrer le nombre cherché")
+	lire(nombre)
+		
+	pour i de 0 à m faire
+	  pour j de 0 à n faire 
+        si (T[i][j] == nombre) alors 
+           écrire("le nombre cherché est trouvé")
+        sinon 
+           écrire("le nombre cherché n'est pas trouvé")
+        finSi
+      finPour
+    finPour	
+fin	
+	
+exercice 4 :
+    var :
+        occurance , nombre , longueur , largeur : entiers
+		T : matrice de largeur (largeur) et de longeur (longueur)
+        		
+début 
+    écrire("entrer la largeur")
+	lire(m)
+	écrire("entrer la longeur")
+	lire(n)
+	écrire("entrer le nombre cherché")
+	lire(nombre)
+	occurance <-- 0
+	
+	pour i de 0 a largeur faire
+	 pour j de 0 a longeur faire 
+	  écrire("T[",i,"]=")
+	  lire (T[i][j])
+     finPour
+    finPour
+  
+	pour i de 0 a largeur faire
+	 pour j de 0 a longeur faire 
+	   si (T[i][j] == nombre) alors
+	     occurance <-- occurance + 1 
+	   finSi
+     finPour
+    finPour
+fin
+    
+exercice 5 : 
+    var : 	 
+	    x1,x2: entiers
+	    s,p : réels
+        structure Rationnel 
+		{ 
+		   numérateur : entier
+	       dénominateur : entier
+        }	
+        finStructure
+
+        a,b : structure Rationnel		
+début
+    s <-- 0
+	p <-- 1
+    
+    écrire("entrer le 1er numérateur")
+	lire(x1.numérateur)
+	écrire("entrer le 1er dénominateur")
+	lire(x1.dénominateur)
+   
+    écrire("entrer le 2éme numérateur")
+	lire(x2.numérateur)
+	écrire("entrer le 2éme dénominateur")
+	lire(x2.dénominateur)	
+	
+	a <-- x1.numérateur / x1.dénominateur 
+	b <-- x2.numérateur / x2.dénominateur
+	
+	s <-- s + a + b
+	p <-- p * a * b
+	
+	écrire("la somme est " , s)
+	écrire("le produit est " , p )
+fin
+
+
+exercice 6 : 
+Algorithm compteBancaire
+    var :
+	    size : entier
+        tableau Informations[size]: Structure Compte
+		structure compte
+		{ 
+		 numéro : entier 
+		 nom : chaine 
+		 prénom : chaine 
+		 date d'ouverture
+		} 
+début 
+    écrire("entrer la tzille de votre tableau") 		 
+	lire(size)
+    
+    pour i de 0 a size faire 
+      écrire("entrer le numéro")
+	  lire (Informations[i].numéro)
+      écrire("entrer le nom et prénom")
+	  lire (Informations[i].nom , Informations[i].peénom)
+      écrire("entrer la date sous forme de jj/mm/année")
+	  lire (Informations[i].date)	  
+	finPour
+	
+	pour i de 0 a size faire 
+	  printf(Information[i])
+	finPour
+fin	
+	
+	
+    	 	  
+		  
+		
+    				
