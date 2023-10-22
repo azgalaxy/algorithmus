@@ -87,47 +87,46 @@ Début
     FinSi
 Fin
 
-//EXERCICE3
-Algorithme IncrementDate
+// EXERCICE3 Algorithme date
+
 
 Variables
     day: entier
     month: entier
     year: entier
+    max_jours: entier
+    mois: tableau
 
 Début
+    mois[0] <-- 31
+    mois[1] <-- 28
+    mois[2] <-- 31
+    mois[3] <-- 30
+    mois[4] <-- 31
+    mois[5] <-- 30
+    mois[6] <-- 31
+    mois[7] <-- 31
+    mois[8] <-- 30
+    mois[9] <-- 31
+    mois[10] <-- 30
+    mois[11] <-- 31
+
     Ecrire("Entrez le jour : ")
     Lire(day)
+
     Ecrire("Entrez le mois : ")
     Lire(month)
+
     Ecrire("Entrez l'année : ")
     Lire(year)
 
-    # Incrémenter le jour
     day <- day + 1
 
-    # Déterminer le nombre maximum de jours dans le mois courant
-    max_jours <- 0
-
-    Si month = 1 ou month = 3 ou month = 5 ou month = 7 ou month = 8 ou month = 10 ou month = 12 Alors
-        max_jours <- 31
-    SinonSi month = 2 Alors
-        Si (year % 4 = 0 et year % 100 <> 0) ou (year % 400 = 0) Alors
-            max_jours <- 29
-        Sinon
-            max_jours <- 28
-        FinSi
-    Sinon
-        max_jours <- 30
-    FinSi
-
-    # Vérifier si le jour dépasse le maximum du mois courant
-    Si day > max_jours Alors
+    Si day > mois[month - 1] Alors
         day <- 1
         month <- month + 1
     FinSi
 
-    # Vérifier si le mois dépasse 12
     Si month > 12 Alors
         month <- 1
         year <- year + 1
@@ -135,7 +134,6 @@ Début
 
     Ecrire("Jour : ", day, " Mois : ", month, " Année : ", year)
 Fin
-
 
 	
 
