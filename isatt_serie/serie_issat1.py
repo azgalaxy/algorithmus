@@ -52,35 +52,23 @@ def Exercice2():
     else:
         print("Il travaille exactement !")
 
+        
+
 def Exercice3():
-    day = int(input("Entrez le jour : "))
-    month = int(input("Entrez le mois : "))
-    year = int(input("Entrez l'année : "))
+        day = int(input("Entrez le jour : "))
+        month = int(input("Entrez le mois : "))
+        year = int(input("Entrez l'année : "))
 
-    day += 1
+        mois = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    max_days = 0
+        day += 1
 
-    if month in [1, 3, 5, 7, 8, 10, 12]:
-        max_days = 31
-    elif month == 2:
-        if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-            max_days = 29
-        else:
-            max_days = 28
-    else:
-        max_days = 30
+        if day > mois[month - 1]:
+            day = 1
+            month += 1
 
-    if day > max_days:
-        day = 1
-        month += 1
+        if month > 12:
+            month = 1
+            year += 1
 
-    if month > 12:
-        month = 1
-        year += 1
-
-    print("Jour : ", day, " Mois : ", month, " Année : ", year)
-
-
-
-Exercice3()
+        print("Jour :", day, "Mois :", month, "Année :", year)
