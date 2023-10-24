@@ -1,0 +1,71 @@
+exercice 2 :
+Algorithm : TTC
+   var :
+     zone : caractére
+	 v : réel
+	 prixUnitaire : réel
+	 tva : réel
+	 partFixe : entier
+	 ttc : réel
+	 
+début
+    répeter
+	   écrire ("entrer la zone :")
+	   lire(zone)
+	jusqu'à(zone => 'A' et zone <= 'C')
+	
+	selon (zone)
+      cas 'A' : 
+	    partFixe <-- 5 
+	  cas 'B' :
+	    partFixe <-- 4
+	  cas 'c' :
+	    partFixe <-- 3 
+	finSelon 
+	
+	répeter 
+	    écrire ("entrer le volume de consommation ")
+		lire(v)
+	jusqu'à (volume =>0 et volume <=500)
+	
+	si (v => 0 et v <= 20) faire
+        prixUnitaire <-- 0.2 
+    sinon si (v => 20 et v <= 40) faire
+        prixUnitaire <-- 0.325
+    sinon si (v => 40 et v <= 70) faire	
+        prixUnitaire <-- 0.45 
+    sinon si (v => 70 et v <= 100) faire 
+        prixUnitaire <-- 0,77
+    sinon si (v => 100 et v <= 150) faire 
+        prixUnitaire <-- 0.94
+    sinon si (v => 150 et v <= 500)	faire	
+	    prixUnitaire <-- 1.26
+    sinon 
+        prixUnitaire <-- 1.315 
+    finSi
+	
+	ttc <-- ((partFixe + v*prixUnitaire)*18)/100 
+	
+	écrire("le montant ttc :" , ttc)
+fin	
+	 
+	 
+exercice 1 :
+Algorithme combinaison
+	Variable :
+		a , b , c : entier
+			
+Début
+	Pour a de 1 à 9 faire
+		Pour b de (a+1) à 9 faire
+			Pour c de (b+1) à 9 faire
+				Ecrire(a,b,c," ")
+				Ecrire(a,c,b)
+				Ecrire(b,a,c)
+				Ecrire(b,c,a)
+				Ecrire(c,a,b)
+				Ecrire(c,b,a)
+			Fin Pour
+		Fin Pour
+	Fin Pour
+Fin
