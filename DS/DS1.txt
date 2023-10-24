@@ -1,0 +1,44 @@
+esercice 1 : 
+Algorithm : NombresAmis
+    var 
+	  k,conteur,n,m : entiers 
+	  somme1 , somme2 : entiers 
+début 
+  écrire("entrer le nombre de fois ue le traitement doit répeter : ")
+  lire(k)
+  
+  conteur <-- 0
+  s1 <--0
+  s2 <--0
+  
+  répeter 
+    répeter 
+	  écrire("entrer n: ")
+	  lire(n)
+	  écrire("entrer m: ")
+	  lire(m)
+	jusqu'à (m>0 et n>0)
+	
+	
+	pour i de 0 a (m div 2) faire
+	  si((m div 2)= 0) alors 
+        s1 <-- s1 + 1 
+      finSi
+	finPour
+    
+    pour j de 0 à (n div 2) faire  
+      si((n div 2)=0) alors
+        s2 <-- s2 + 1	  
+	  finSi
+	finPour
+	
+    si ( s1 == n et s2 == m) alors
+      écrire("les deux nombres sont amies !")
+    sinon 
+      écrire("les deux nombres ne sont pas amies!")
+	finSi
+	
+	conteur = conteur + 1
+	
+  jusqu'à(conteur = k)
+fin
