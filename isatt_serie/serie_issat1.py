@@ -52,7 +52,7 @@ def Exercice2():
     else:
         print("Il travaille exactement !")
 
-        
+
 
 def Exercice3():
         day = int(input("Entrez le jour : "))
@@ -72,3 +72,74 @@ def Exercice3():
             year += 1
 
         print("Jour :", day, "Mois :", month, "Année :", year)
+
+
+
+def Exercice3():
+    car = input("Entrer un caractére: ")
+
+    if car.isalpha():
+        print("Le caractère est une lettre.")
+    elif car.isdigit():
+        print("Le caractère est un chiffre.")
+    else:
+        print(":(")
+
+
+
+
+def Exercice6():
+    n1 = int(input("n1: "))
+    n2 = int(input("n2: "))
+    n3 = int(input("n3: "))
+
+
+    maxx = n1
+    minn = n1
+
+    if (n2 < minn):
+        minn = n2
+
+    if (n3 < minn):
+        minn = n3
+
+    if (n2 > maxx):
+        maxx = n2
+
+    if (n3 > maxx):
+        maxx = n3
+
+
+    print(maxx)
+    print(minn)
+
+
+def Exercice8():
+    x = int(input("Entrez x: "))
+    y = int(input("Entrez y: "))
+
+    x_x = x*x
+    x_2_y = x*2*y
+    y_y= y*y
+
+
+    z = x_x + x_2_y + y_y
+
+
+    print(f"(x+y)² = {z}")
+
+
+
+def Exercice9():
+    x = int(input("Entrez x: "))
+    binary = ""
+
+    while (x > 0):
+        rest = x %2
+        x = x // 2
+        binary = str(rest) + binary
+
+
+    print(binary)
+
+Exercice9()
