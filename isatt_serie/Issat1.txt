@@ -87,7 +87,8 @@ Début
     FinSi
 Fin
 
-// EXERCICE3 Algorithme date
+// EXERCICE 3 
+Algorithme date
 
 
 Variables
@@ -135,21 +136,106 @@ Début
     Ecrire("Jour : ", day, " Mois : ", month, " Année : ", year)
 Fin
 
+
+//EXERCICE 6
+algorithme sorté
+variables
+	n1: réel
+	n2: réel
+	n3: réel
+
+	min: réel
+	max
+début
+	Ecrire("Entrez le premier nombre: ")
+	Lire(n1)
+
+	Ecrire("Entrez le deuxiéme nombre: ")
+	Lire(n2)
+
+	Ecrire("Entrez le troisiéme nombre: ")
+	Lire(n3)
+
+	min <- n1
+	max <- n1
+
+	Si n2 < min alors
+		min <- n2
+	FinSi
+
+	Si n3 < min alors
+		min <- n3
+	FinSi
+
+	Si n2 > max alors
+		max <- n2
+	FinSi
+
+	Si n3 > max alors
+		max <- n3
+	FinSi
+
+
+	Ecrire("Le minimum est: ",min)
+	Ecrire("Le maximum est ",max)
+
+Fin
+
+
+//EXERCICE 8
+variable
+	x: entier
+	y: entier
+	x_x: entier
+	x_2_y: entier
+	y_y: entier
+	z: entier
+début
+
+	Ecrire("Entrez x: ")
+	Lire(x)
+	Ecrire("Entrez y: ") 
+	Lire(y)
+
+	x_x <- x*x
+	x_2_y <- x*2*y
+	y_y <- y*y
+
+
+	z = x_x + x_2_y + y_y
+
+	Ecrire("(x+y)² = z")
+Fin
+
+
+//EXERCICE9
+Algorithme binary
+variables
+	x: entier
+	y: entier
+	binary: entier
+	rest: entier
+début
+	Ecrire("Entrez x: ")
+	Lire(x)
+	
+	binary <- ""
+	
+	Tanque x > 0 
+		rest <- x mod 2
+		x <- x div 2
+		binary <- rest + binary
+	FinTanQue
+
+	print("le nombre est ",binary)
+Fin
+	
 	
 
 
 
 
 
-			
-	
-
-
-
-
-
-
-	
 
 	
 
