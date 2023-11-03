@@ -1,0 +1,303 @@
+////////////////////////////TRI ET RECHERCHE : SERIE D’EXERCICES/////////////////////
+
+
+//EXERCICE 1
+Algorithme exercice1
+variables
+	somme, N, i, temp: entier
+	T: tableau[27] d'entiers
+début
+	somme <- 0
+
+	T[0] <- 4
+	T[1] <- 5
+	T[2] <- 6
+	T[3] <- 7
+	T[4] <- 8
+	T[5] <- 9
+	T[6] <- 10
+	T[7] <- 11
+	T[8] <- 12
+	T[9] <- 13
+	T[10] <- 14
+	T[11] <- 15
+	T[12] <- 16
+	T[13] <- 17
+	T[14] <- 18
+	T[15] <- 19
+	T[16] <- 20
+	T[17] <- 21
+	T[18] <- 22
+	T[19] <- 23
+	T[20] <- 24
+	T[21] <- 25
+	T[22] <- 26
+	T[23] <- 27
+	T[24] <- 28
+	T[25] <- 29
+	T[26] <- 30
+	T[27] <- 31
+
+	Pour i de 0 à N - 1
+		Pour j de 0 à i+1 à N
+		   si T[i] <  T[j]
+			temp <- T[i]
+			T[i] <- T[j]
+			T[j] <- temp
+		   FinSi
+		FinPour
+	FinPour
+
+	Pour a de 0 à N-1
+		somme <- sommme+T[a]
+	FinPour
+
+Fin
+
+
+
+
+//EXERCICE 2 
+Algorithme posbilities
+variables
+	nombre : entier
+	N_s: chaine de caractére
+début
+
+	Ecrire("Entrer un nombre de 5 ")
+	Lire(nombre)
+	
+		
+	N_s <- convch(nombre)
+
+
+	Pour i de 0 à long(N_s)
+	  Pour j de 0 à long(N_s) - i -1
+		Si N_s[i] < N_s[j]
+		   temp <- N_s[i]
+                   N_s[i] <- N_s[j]
+		   N_s[j] <- temp
+                FinSi
+	   FinPour
+	FinPour	
+
+	Ecrire("Le numéro est : ",N_s)
+Fin
+
+
+
+//EXERCICE 4 
+Algorithme 3
+Varibales
+	T1,T2: tableau 
+	n: entier
+	i,j,temp,t,d,h,x,y,r,u: entier
+	min: entier
+début
+	Ecrire("Entrer la taille: ")
+	Lire(n)
+
+	Pour i de 1 à n faire
+		Ecrire("Entrer un caractére a le tableau: ")
+		Lire(T1[i])
+	FinPour
+
+	Pour j de 1 à n faire
+		T2[i] <- "" 
+	FinPou
+
+	Pour t de 0 à n-1 faire
+		min <- T1[0]
+		Pour d de 0 à n-1 faire
+		   Si ord(T1[d] < min faire
+			min <- T[d]
+			indiceMin <- d
+		   FinSi
+		FinPour
+	FinPour
+
+	T1[indiceMin] <- "a"
+
+	Pour h de 0 à n-1 faire
+		T2[h] <- T1[h]
+
+
+	Pour x de 0 à n-1 faire	
+	    Pour y de 0 à n - 1 faire
+		Si T2[x] < T2[y] faire
+			temp <- T2[x]
+			T2[x] <- T2[y]
+			T2[y] <- temp
+		FinSi
+	    FinPour
+	FinPour		
+
+
+	Pour r de 0 à n-1 faire
+		Ecrire(T1[r])
+	FinPour		
+
+	
+	Pour u de 0 à n-1 faire
+		Ecrire(T1[u])
+	FinPour
+Fin
+
+
+
+
+
+
+
+//EXERCICE 5 
+Algorithme exercice 5 
+Variables
+    T, V: tableau d'entiers
+    N, max, i, j: entier
+Début
+    Ecrire("Entrer la taille N (5<=N<=30): ")
+    Lire(N)
+
+
+    Pour i de 0 à N-1 faire
+        Ecrire("Entrer un entier dans le tableau T: ")
+        Lire(T[i])
+    FinPour
+
+    Pour i de 1 à N faire
+        V[i] <- 0
+    FinPour
+
+    max <- 0
+
+    Pour j de 0 à N-1 faire
+         Si T[j] > max alors
+                max <- T[j]
+            FinSi
+        FinPour
+
+        V[i] <- max
+
+    Pour j de 0 à N-1 faire
+            Si T[j] = max alors
+                T[j] <- -1
+            FinSi
+    FinPour
+
+    Ecrire("Le tableau V trié par ordre décroissant est :")
+    Pour i de 1 à N faire
+        Ecrire(V[i])
+    FinPour
+Fin
+
+
+
+//EXERCICE 6
+Algorithme Moyenne
+variables
+	N <- 20
+	T: tableau[20]
+	temp1,temp2: entier
+	M: tableau[20]
+début
+	Pour i de 0 à N-1 faire
+	  Ecrire("Entrez le nom de l'eléve ,"i)
+	  Lire(T[i])
+	FinPour
+
+	Pour j de 0 à N-1 faire
+	  Ecrire("Entrez le moyenne de l'eléve ,"j)
+	  Lire(M[j])
+	FinPour
+
+	Pour a de 0 à N-1 faire
+	  Pour  b de 0 a +1 à N faire
+	      Si M[a] < M[b] ou (M[a] = M[b] et T[a] > T[b])
+		 temp1 <- M[a]
+		 M[a] <- M[b]
+		 M[b] <- temp1
+
+		 temp2 <- T[a]
+		 T[a] <- T[b]
+		 T[b] <- temp2
+	      FinSi
+	  FinPour
+	FinPour	
+	
+	Pour c de 0 à N-1 faire 
+		Ecrire("Les éleves",T[c]"les moyens",M[c]")
+	FinPour
+Fin
+
+
+
+
+//EXERCICE8
+Algorithme tableaus
+variables
+	N: 27
+	M: 27
+	T: tableau[27]
+	V tableau[27]
+	W : tableau[27+27]
+	i,j,k: entier
+début
+	Pour i de 0 à N-1 faire
+	   Ecrire("Entrer les element de tableu: ")	
+	   Lire(T[i])
+	FinPour
+
+	Pour j de 0 à M-1 faire
+	   Ecrire("Entrez les éléments du tableau V)
+	   Lire(V[j])
+	FinPour
+
+	a <- 1
+	b <- 1
+	c <- 1
+
+	TanQue 1 <= N et j <= M
+	   Si T[i] <= V[j] 
+		W[k] <- T[i]
+		i <- i+1
+	   SiNon
+		W[k] <- V[j]
+		j <- j + 1
+	   FinSi
+	   k <- k+1
+	FinTanQue
+
+
+	Tant que i <= N 
+	   W[k]	 <- T[i]
+	   i <- i+1
+	   j <- k+1
+	FinTanQue
+
+	TantQue j <= M
+	   W[k] <- V[j]
+	   j <- j+1
+	   k <- k+1
+	FinTanQue
+
+	pour z de 0 1 à N+m
+		Ecrire("le tableau "W[z])	
+Fin
+		  
+	   
+
+
+	
+	
+
+
+
+
+	
+
+
+    
+		
+
+
+
