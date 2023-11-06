@@ -6,54 +6,51 @@ Algorithme exercice1
 variables
 	somme, N, i, temp: entier
 	T: tableau[27] d'entiers
-début
-	somme <- 0
+Début
 
-	T[0] <- 4
-	T[1] <- 5
-	T[2] <- 6
-	T[3] <- 7
-	T[4] <- 8
-	T[5] <- 9
-	T[6] <- 10
-	T[7] <- 11
-	T[8] <- 12
-	T[9] <- 13
-	T[10] <- 14
-	T[11] <- 15
-	T[12] <- 16
-	T[13] <- 17
-	T[14] <- 18
-	T[15] <- 19
-	T[16] <- 20
-	T[17] <- 21
-	T[18] <- 22
-	T[19] <- 23
-	T[20] <- 24
-	T[21] <- 25
-	T[22] <- 26
-	T[23] <- 27
-	T[24] <- 28
-	T[25] <- 29
-	T[26] <- 30
-	T[27] <- 31
+  Afficher "Entrez la taille du tableau (entre 4 et 31) :"
+  Lire N
 
-	Pour i de 0 à N - 1
-		Pour j de 0 à i+1 à N
-		   si T[i] <  T[j]
-			temp <- T[i]
-			T[i] <- T[j]
-			T[j] <- temp
-		   FinSi
-		FinPour
-	FinPour
+  Si N <= 4 ou N >= 31 Alors
+    Afficher "La taille du tableau doit être entre 4 et 31."
+    Arrêter
+  Fin Si
 
-	Pour a de 0 à N-1
-		somme <- sommme+T[a]
-	FinPour
 
-Fin
 
+  Pour i allant de 0 à N-1 Faire
+    Pour j allant de i+1 à N-1 Faire
+      somme_i <- 0
+      somme_j <- 0
+      
+
+
+      nombre_i <- T[i]
+      Tant que nombre_i > 0 Faire
+        somme_i <- somme_i + (nombre_i % 10)
+        nombre_i <- nombre_i / 10
+      Fin Tant que
+     
+
+      nombre_j <- T[j]
+      Tant que nombre_j > 0 Faire
+        somme_j <- somme_j + (nombre_j % 10)
+        nombre_j <- nombre_j / 10
+      Fin Tant que
+   
+
+      Si somme_i < somme_j Alors
+        temp <- T[i]
+        T[i] <- T[j]
+        T[j] <- temp
+      Fin Si
+    Fin Pour
+  Fin Pour
+
+  Afficher "Tableau trié dans l'ordre décroissant en fonction de la somme des chiffres :"
+  Pour i allant de 0 à N-1 Faire
+    Afficher T[i]
+  Fin Pour
 
 
 
@@ -100,6 +97,7 @@ début
 	Pour i de 1 à n faire
 		Ecrire("Entrer un caractére a le tableau: ")
 		Lire(T1[i])
+		chr(T1[i])
 	FinPour
 
 	Pour j de 1 à n faire
@@ -139,7 +137,7 @@ début
 
 	
 	Pour u de 0 à n-1 faire
-		Ecrire(T1[u])
+		Ecrire(T2[u])
 	FinPour
 Fin
 
@@ -280,6 +278,12 @@ début
 	   k <- k+1
 	FinTanQue
 
+
+	Pour i de 1 à c :
+    	  Pour j de 1 à c - i :
+             Si W[j] < W[j + 1] :
+                W[j] <-- W[j + 1]
+
 	pour z de 0 1 à N+m
 		Ecrire("le tableau "W[z])	
 Fin
@@ -289,12 +293,6 @@ Fin
 
 	
 	
-
-
-
-
-	
-
 
     
 		
