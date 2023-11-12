@@ -339,7 +339,7 @@ void trierEtAfficherChaine()
     printf("Chaîne triée par ordre décroissant des longueurs des mots : %s\n", ph);
 }
 
-void fusionnement_et_afficher()
+void fusionnement_et_affichage()
 {
     int N, M;
 
@@ -413,5 +413,5 @@ int main()
     // Codage();
     // tri_decroissant();
     // tri_decroissant_de_moyennes();
-    // fusionnement_et_afficher()
+    // fusionnement_et_affichage()
 }
