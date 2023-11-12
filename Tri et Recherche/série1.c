@@ -379,22 +379,22 @@ void fusionnement_et_affichage()
     {
         if (T[i] <= V[j])
         {
-            W[k++] = T[i++];
+            W[k+1] = T[i+1];
         }
         else
         {
-            W[k++] = V[j++];
+            W[k+1] = V[j+1];
         }
     }
 
     while (i < N)
     {
-        W[k++] = T[i++];
+        W[k+1] = T[i+1];
     }
 
     while (j < M)
     {
-        W[k++] = V[j++];
+        W[k+1] = V[j+1];
     }
 
     printf("Tableau fusionné W :\n");
