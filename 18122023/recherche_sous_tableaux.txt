@@ -1,0 +1,80 @@
+Exercice 3 :
+procédure saisie(@size1:entier, @size2:entier)
+   début
+    répeter
+        écrire("entrez la taille du tableau Td : ")
+        lire(size1)
+    jusqu'à (size1 < 4 et size1 > 20)
+
+    répeter
+        écrire("entrez la taille du tableau Te : ")
+        lire(size2)
+    jusqu'à (size2 < 5 et size2 > 20)
+   fin
+
+procédure remplire(@tab[]:entier, size:entier)
+   variables
+    i : entier
+   début
+    pour i de 0 à size - 1 faire
+        écrire("entrez un élément du tableau : ")
+        lire(tab[i])
+    finPour
+   fin
+
+procédure affichage(@tab[]:entier, size: entier)
+   variables
+    i : entier
+   début
+    écrire("votre tableau est  : ")
+    pour i de 0 à size - 1 faire
+        écrire(tab[i])
+    finPour
+   fin
+
+fonction trouver_sous_tableau(tab1[]:entier, tab2[]:entier, size1:entier, size2:entier):entier
+   variables
+    i, j : entier
+   début
+    pour i de 0 à size1 - size2 faire
+        j = 0
+        tantQue ((j < size2) et (tab1[i + j] = tab2[j])) faire
+            j = j + 1
+        finTantQue
+        si (j = size2) alors
+            retourner 1
+        finSi
+    finPour
+    retourner 0
+   fin
+
+Algorithme sous_tableau
+   variables
+    size1, size2:entier
+    Td[20]:entier
+    Te[20]:entier
+    trouvé : entier
+
+   début
+    saisie(size1, size2)
+
+    // Remplissage et affichage du 1er tableau Td
+    remplire(Td, size1)
+    affichage(Td, size1)
+
+    // Remplissage et affichage du 2eme tableau Te
+    remplire(Te, size2)
+    affichage(Te, size2)
+
+    // Trouver le sous tableau
+    si (size2 > size1) alors
+        écrire("Impossible d'effectuer la recherche : ")
+    sinon
+        trouvé = trouver_sous_tableau(Td, Te, size1, size2)
+        si (trouvé = 0) alors
+            écrire("Le tableau n'est pas trouvé!")
+        sinon
+            écrire("Le tableau est trouvé!")
+        finSi
+    finSi
+   fin

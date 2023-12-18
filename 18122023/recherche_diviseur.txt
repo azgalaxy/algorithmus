@@ -1,0 +1,70 @@
+Exercice 4 :
+procédure saisie(@size1:entier, @size2:entier)
+   début
+    répeter
+        écrire("entrez la taille du tableau T1 : ")
+        lire(size1)
+    jusqu'à (size1 < 1 et size1 > 30)
+
+    répeter
+        écrire("entrez la taille du tableau T2 : ")
+        lire(size2)
+    jusqu'à (size2 < 1 et size2 > 20)
+   fin
+
+procédure remplire(@tab[]:entier, size:entier)
+   variables
+    i : entier
+   début
+    pour i de 0 à size - 1 faire
+        écrire("entrez un élément du tableau : ")
+        lire(tab[i])
+    finPour
+   fin
+
+procédure affichage(@tab[]:entier, size: entier)
+   variables
+    i : entier
+   début
+    écrire("votre tableau est  : ")
+    pour i de 0 à size - 1 faire
+        écrire(tab[i])
+    finPour
+   fin
+
+procédure recherche_diviseur(tab1[]:entier, tab2[]:entier, size1:entier, size2:entier , position : entier)
+  variables 
+   i, j: entier
+  début
+   pour i de 0 à size2 - 1  faire
+    si (tab1[pos] % tab2[i] == 0) alors
+	 écrire("c'est un diviseur : ",tab2[i])
+	finSi
+   finPour
+  fin
+  
+Algorithme recherche_diviseur
+   variables
+    size1, size2:entier
+    Tab1[30]:entier
+    Tab2[10]:entier
+	position : entier
+	
+   début
+    saisie(size1, size2)
+
+    // Remplissage et affichage du 1er tableau T1
+    remplire(Tab1, size1)
+    affichage(Tab1, size1)
+
+    // Remplissage et affichage du 2eme tableau T2
+    remplire(Tab2, size2)
+    affichage(Tab2, size2)
+
+    //affichage des diviseurs
+	répeter
+	 écrire("entrez la position de l'element dont vous chercher les diviseurs :")
+	 lire(position)
+	jusqu'à (position > 0 et position <size1)
+	recherche_diviseur(Tab1, Tab2, size1, size2, position)
+   fin
