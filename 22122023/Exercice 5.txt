@@ -1,0 +1,49 @@
+Exercice 5 :
+
+	Algorithme Tableaux
+		Variables : 
+			T : Tableau d'entiers
+			TPOS : Tableau d'entiers
+			TNEG : Tableau d'entiers
+			i , k , j , taille : entier
+		
+		Début
+			Répéter
+				Ecrire("Donnez la taille du tableau : ")
+				Lire(taille)
+			Jusqu'à(taille < 0 ou taille > 50)
+			
+			Ecrire("Entrez les valeurs de T : ")
+			Pour i de 1 à taille Faire
+				Ecrire("T[",i,"] = ")
+				Lire(T[i])
+			Fin Pour
+			
+			Ecrire("Le tableau T : ")
+			Pour i de 1 à taille Faire
+				Ecire(T[i]," | ")
+			Fin Pour
+			
+			k <-- 0
+			j <-- 0
+			Pour i de 0 à taille Faire
+				Si T[i] > 0 Alors
+					TPOS[i] = T[j]
+					j += 1
+				Sinon
+					TNEG[i] = T[k]
+					k += 1
+				Fin Si
+			Fin Pour
+			
+			Ecrire("Le tableau TPOS : ")
+			Pour i de 1 à j Faire
+				Ecire(TPOS[i]," | ")
+			Fin Pour
+			
+			Ecrire("Le tableau TNEG : ")
+			Pour i de 1 à k Faire
+				Ecire(TNEG[i]," | ")
+			Fin Pour
+		Fin
+		
