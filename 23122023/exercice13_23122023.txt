@@ -1,0 +1,30 @@
+Exercice 5 :
+procédure remplire_tableau(@tab[][20]:entier, size:entier)
+   variables
+    i : entier
+   début
+    écrire("Veuillez saisir les elements de votres tableaux : ")	
+    pour i de 0 à size - 1 faire
+        écrire("entrez un élément du tableau : ")
+        lire(tab[i])
+    finPour
+   fin
+
+procédure afficher_ordre_inverse(tab[][20], size:entier)
+   variables 
+    i : entier
+   début 
+    écrire("la chaines dans l'ordre inverse : ")
+	pour i de size - 1 à 0 faire 
+	  écrire(tab[i])
+	finPour
+	écrire("\n")
+   fin
+
+Algorithme inverser_chaine
+   variables
+    mots[5][20] : caractére
+   début
+    remplire_tableau(mots,5)
+    afficher_ordre_inverse(mtos,5)
+   fin	

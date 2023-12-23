@@ -1,0 +1,70 @@
+Exercice 4 :
+fonction saisir_taille()
+   variables
+    size : entier
+   début
+    répeter
+        écrire("entrez la taille du tableau Td : ")
+        lire(size1)
+    jusqu'à (size1 <= 0 et size1 > 50)
+	return size
+   fin
+
+procédure remplire_tableau(@tab[]:entier, size:entier)
+   variables
+    i : entier
+   début
+    pour i de 0 à size - 1 faire
+        écrire("entrez un élément du tableau : ")
+        lire(tab[i])
+    finPour
+   fin
+
+procédure afficher_tableau(@tab[]:entier, size: entier)
+   variables
+    i : entier
+   début
+    écrire("votre tableau est  : ")
+    pour i de 0 à size - 1 faire
+        écrire(tab[i])
+    finPour
+   fin
+
+procédure echanger_elements(i:entier, j:entier, @tab[]:entier)
+   variables
+    temporaire: entier
+   début
+     temp <-- tab[i]
+     tab[i] <-- tab[j]
+     tab[j] <-- temp
+   fin
+
+procédure inverser_tableau(size:entier, tab[]:entier)
+   variables 
+    i, j : entier
+   début
+    pour i de 0 à (taille/2) faire
+     j <-- size - i - 1 
+     echanger_elements(i, j, tab)
+    finPour
+   fin
+   
+Algorithme Inversion_tableau 
+   variables
+    size : entier
+	tab[50]: entier
+   début
+     size <-- saisir_taille()
+     remplire_tableau(tab,size)
+      
+     écrire("le tableau oroginal : ")
+     afficher_tableau(tab,size)
+     
+	 inverser_tableau(tab,size)
+	 
+     écrire("le tableau inverse : ")
+     afficher_tableau(tab,size)
+	fin
+      	 
+    
+ 
