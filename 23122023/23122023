@@ -1,1 +1,123 @@
 
+EXERCICE1:  https://leetcode.com/problems/3sum-closest/
+EXERCICE2 link: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+23122023
+//EXERCICE 1
+fonction Sum(tableau: tableau d'entier, target: Entier): Entier
+  Variables:
+     somme : Entier
+     min  : Entier
+     i,j,k: Entier
+     somme: Entier
+     diff: Entier
+
+  Début
+    somme<- tableau[0] + tableau[1] + tableau[2] 
+    min <- somme - target 
+  
+    pour i de 0 à long(tableau) - 2 faire:
+        pour j de i + 1 à long(tableau) - 1 faire:
+            pour k de j + 1 à long(tableau) - 1 faire:
+                somme <- tableau[i] + tableau[j] + tableau[k]
+                diff <- somme - target
+                
+                si diff <-  0 alors:
+                    retourner somme 
+                
+                si (diff > 0 ET diff < min) OU (diff < 0 ET -diff < min) alors:
+                    min  <- diff
+                    somme <- somme
+    
+    retourner somme
+  Fin
+Algorithme Sum_Closet
+Variables
+  S: Entier
+  target: Entier
+  nums: tableau d'entier
+
+Début
+ Repeter
+  Ecrire("Entrez La Taille: ")
+  Lire(S)
+ Jusqu'a (3 <= s <= 500)
+ 
+ Repeter
+   Pour i de 1 à s
+    Ecrire("Entrez l' element : ",i)
+    Lire(nums[i])
+   FinPour
+ Jusqu'a (-1000 <= nums[i] <= 1000)
+  
+ Repeter
+   Ecrire("Entrez le Target: ")
+   Lire(target)
+ Jusqu'a (-10^4<= target <= 10^4)
+
+
+ Ecirie(sum(nums,target))
+fin
+
+//EXERCICE 2 
+Fonction index(tableau: tableau d'entier, Target: Entier, S: entier): Entier
+  Variables
+     i: Entier
+  Début
+     found <- faux
+     Pour i de  1 à S Faire
+       Si tableau[i] = Target Alors
+           Ecrire(i)
+           found <- vrai
+       FinSi 
+     FinPour
+     Si found = faux alors
+       Ecrire("-1,-1")
+  Fin
+Algorithme Search_in_Rotated_Sorted_Array
+Variables
+  S: Entier
+  nums: tableau d'entier
+  target: Entier
+Debut
+  Repeter
+   Ecrire("Entrez La Taille: ")
+   Lire(S)
+  jusqu'a (1 <= S <= 5000)
+
+  Repeter
+    Pour i de 1 à S Faire
+      Ecrire("Entrez les elements: ",i)
+      Lire(nums[i])
+    FinPour
+  Jusqu'a (-10^4 <= nums[i] <= 10^4)
+
+  Repeter
+   Ecrire("Entrez ton Target: ")
+   lire(target)
+  jusqu'a (-10^4 <= target <= 10^4)
+
+  index(nums,target,S)
+Fin
+
+//EXERCICE 3 
+Variables
+  phrase,mot1,mot2,mot3,mot4,mot4,mot5: chaine de caractére
+  spac: chaine de caractére
+Début
+  Ecrire("Entrez la phrase: ")
+  Lire(phrase)
+
+  space = " "
+  mot1 <- souschaine(phrase,pos(phrase[0]),pos(space))
+  mot2 <- souschaine(phrase,pos(mot1),pos(space))
+  mot3 <- souschaine(phrase,pos(mot2),pos(space))
+  mot4 <- souschaine(phrase,pos(mot3),pos(space))
+  mot5 <- souschaine(phrase,pos(mot4),pos(phrase[len(phrase]=)
+
+  mot <- ""
+  mot <- mot5 + mot4 + mot3 + mot2 + mot1
+  Ecrire(mot)
+Fin
+
+
