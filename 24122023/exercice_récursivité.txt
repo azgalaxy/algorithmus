@@ -1,0 +1,55 @@
+Algorithme EvaluationExpression
+    // Types
+    Expression = Tableau [1 .. MAX] de caractère
+    Operateur = (addition, soustraction, multiplication, division)
+
+    // Fonctions
+    Fonction estUneOperation(c : caractère) : Booléen
+        // Implementation de la fonction
+    Fin Fonction
+
+    Fonction obtenirOperation(c : caractère) : Operateur
+        // Implementation de la fonction
+    Fin Fonction
+
+    Fonction obtenirNombre(c : caractère) : Réel
+        // Implementation de la fonction
+    Fin Fonction
+
+    // Fonction récursive pour évaluer une expression arithmétique
+    Fonction evaluerExpression(expression : Expression, position : entier) : Réel
+        Si estUneOperation(expression[position]) Alors
+            // Opérateur trouvé, obtenir les opérandes et évaluer récursivement
+            op = obtenirOperation(expression[position])
+            operand1 = evaluerExpression(expression, 2 * position)
+            operand2 = evaluerExpression(expression, 2 * position + 1)
+
+            // Appliquer l'opération
+            Selon op
+                Cas addition : Retourner operand1 + operand2
+                Cas soustraction : Retourner operand1 - operand2
+                Cas multiplication : Retourner operand1 * operand2
+                Cas division : Retourner operand1 / operand2
+            Fin Selon
+        Sinon
+            // Nombre trouvé, retourner sa valeur
+            Retourner obtenirNombre(expression[position])
+        Fin Si
+    Fin Fonction
+
+    // Programme principal
+    Fonction principale
+        Variables locales
+            expression: Expression
+            resultat: Réel
+
+        // Exemple d'expression préfixe : * + 2 3 5
+        expression = ["*", "+", "2", "3", "5"]
+
+        // Appel de la fonction d'évaluation récursive
+        resultat = evaluerExpression(expression, 1)
+
+        // Affichage du résultat
+        Écrire("Le résultat de l'expression est : ", resultat)
+    Fin Fonction
+Fin Algorithme

@@ -1,0 +1,101 @@
+Algorithme Fiche
+    Structure Date
+        jour: entier
+        mois: entier
+        annee: entier
+    Fin Structure
+
+    Structure Adresse
+        nomRue: chaîne de caractères
+        codePostal: entier
+        ville: chaîne de caractères
+    Fin Structure
+
+    Structure FicheEmploye
+        nom: chaîne de caractères
+        prenom: chaîne de caractères
+        adresse: Adresse
+        telephone: chaîne de caractères
+        dateNaissance: Date
+    Fin Structure
+
+    // Fonction pour lire une fiche
+    Fonction lireFiche(fiche: FicheEmploye)
+        Début
+            Écrire("Nom : ")
+            Lire(fiche.nom)
+        Fin Fonction
+
+    // Fonction pour remplir un tableau de fiches
+    Fonction remplirTab(tableau: tableau de FicheEmploye, taille: entier)
+        Variables locales:
+            i: entier
+        Début
+            Pour i de 1 à taille
+                Écrire("Saisie de la fiche ", i, " :")
+                lireFiche(tableau[i])
+            Fin Pour
+        Fin Fonction
+
+    // Fonction pour rechercher une personne par nom
+    Fonction rechNom(tableau: tableau de FicheEmploye, taille: entier, nomRecherche: chaîne de caractères)
+        Variables locales:
+            i: entier
+        Début
+            Pour i de 1 à taille
+                Si tableau[i].nom = nomRecherche Alors
+                    Écrire("Personne trouvée :")
+                    affichePers(tableau[i])
+                    Retourner // On a trouvé la personne, on peut quitter la fonction
+                Fin Si
+            Fin Pour
+            Écrire("Personne non trouvée avec le nom ", nomRecherche)
+        Fin Fonction
+
+    // Fonction pour rechercher une personne par téléphone
+    Fonction rechTel(tableau: tableau de FicheEmploye, taille: entier, telRecherche: chaîne de caractères)
+        Variables locales:
+            i: entier
+        Début
+            Pour i de 1 à taille
+                Si tableau[i].telephone = telRecherche Alors
+                    Écrire("Personne trouvée :")
+                    affichePers(tableau[i])
+                    Retourner // On a trouvé la personne, on peut quitter la fonction
+                Fin Si
+            Fin Pour
+            Écrire("Personne non trouvée avec le numéro de téléphone ", telRecherche)
+        Fin Fonction
+
+    // Fonction pour afficher une fiche
+    Fonction affichePers(fiche: FicheEmploye)
+        Variables locales:
+        Début
+            Écrire("Nom : ", fiche.nom)
+            Écrire("Prénom : ", fiche.prenom)
+        Fin Fonction
+
+    // Programme principal
+    Fonction principale
+        Variables locales:
+            tailleTableau: entier
+            tableau: tableau de FicheEmploye
+            nomRecherche: chaîne de caractères
+            telRecherche: chaîne de caractères
+        Début
+            Écrire("Entrez la taille du tableau : ")
+            Lire(tailleTableau)
+
+            Déclarer tableau: tableau de FicheEmploye de taille tailleTableau
+
+            remplirTab(tableau, tailleTableau)
+
+            Écrire("Entrez le nom à rechercher : ")
+            Lire(nomRecherche)
+            rechNom(tableau, tailleTableau, nomRecherche)
+			
+            Écrire("Entrez le numéro de téléphone à rechercher : ")
+            Lire(telRecherche)
+            rechTel(tableau, tailleTableau, telRecherche)
+        Fin Fonction
+Fin Algorithme
