@@ -1,0 +1,21 @@
+Exercice 2 :
+
+Fonction Evaluation_recursive(e : expression , i : indice) : Réel
+	Variables : 
+		v1 : Réel
+		v2 : Réel
+	
+	Début
+		Si Non estUneOperation(e[i]) Alors
+			Retourner obtenirNombre(e[i])
+		Sinon
+			v1 <-- Evaluation_recursive(e,2*i) 
+			v2 <-- Evaluation_recursive(e,2*i+1)
+			Cas obtenirOperation(e[i]) De
+				addition : Retourner v1 + v2
+				soustraction : Retourner v1 - v2
+				multiplication : Retourner v1 * v2
+				division : Retourner v1 / v2
+			FinCas
+		Fin Si
+	Fin
