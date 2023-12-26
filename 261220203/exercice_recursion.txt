@@ -1,0 +1,31 @@
+Exercice 1 : 
+  Fonction CalculerPuissance(x, n)
+    Variables
+        temp: Réel
+    Début
+        si n = 0 Alors
+            retourner 1
+        Sinon Si n est pair Alors
+            temp = CalculerPuissance(x, n/2)
+            Retourner temp * temp
+        Sinon
+            temp = CalculerPuissance(x, (n-1)/2)
+            Retourner x * temp * temp
+        Fin Si
+    Fin
+ 
+
+Algorithme ExponentiationBinair
+	   Variables
+        x: Réel // La base
+        n: Entier // L'exposant
+        resultat: Réel
+       début
+        Écrire("Entrez la base (x) : ")
+        Lire(x)
+        Écrire("Entrez l'exposant (n) : ")
+        Lire(n)
+        resultat = CalculerPuissance(x, n)
+        Écrire("Le résultat de ", x, "^", n, " est : ", resultat)
+      fin    
+
