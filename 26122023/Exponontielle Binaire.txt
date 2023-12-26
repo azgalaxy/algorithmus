@@ -1,0 +1,38 @@
+Exercice 1 :
+	
+	Algorithme Exponentielle_Binaire
+		Variable : 
+				
+		Fonction Puissance (x : entier , n : entier) : entier
+			Variables :
+				temp : entier
+			
+			Début
+				Si n = 0 Alors
+					Retourner 1
+				Si n mod 2 = 0 Alors
+					temp = Puissance(x,n/2)
+					Retourner temp * temp
+				Sinon
+					temp = Puissance(x,(n-1)/2)
+					Retourner x * temp * temp
+			Fin
+		
+		Fonction Complexité (x : entier , n : entier) : entier
+			Début
+				Si n = 0 Alors
+					Retourner 1
+				Sinon
+					e = [n]
+					Tant que e > 0 Faire
+						Si e % 2 = 0 Alors
+							x = Puissance(x,2)
+							e = e / 2
+						Sinon
+							e = e - 1
+							x = x * Puissance(x,e)
+							e = 0
+					Retourner x
+
+			
+			
