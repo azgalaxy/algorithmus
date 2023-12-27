@@ -1,0 +1,82 @@
+exercice 1 :
+procédure saisie(@taille_T : entier, @taille_Tm : entier)
+  début
+    répeter
+     écrire("entrez la taille du tableau T :")
+     lire(taille_T)
+    jusqu'à (taille_T > 2 et taille_T <= 20)
+
+    répeter
+     écrire("entrez	la taille du tableau Tm : ")
+     lire(taille_Tm)
+    jusqu'à (taille_Tm > 2 et taille_Tm <= 200)
+   fin
+
+fonction Comparaison (ch : chaine , ch_cherchée : chaine) : booléen
+   variables : 
+      i, j: entier
+      trouvée : booléen
+   début 
+      trouvé <-- faux
+      pour i de 0 de long(ch) - 1 faire
+       pour j de 0 de long(ch_cherchée) - 1 faire
+         si (ch[i] = ch_cherchée[j]) alors
+           si (ch[i+1] = ch_cherchée[j+1]) alors
+             si (ch[i+2] = ch_cherchée[j+2]) alors
+               trouvée <-- vrai
+             sinon 
+               trouvée <-- faux
+             finSi
+           sinon
+             trouvée <-- faux
+           finSi
+         sinon
+           trouvée <--faux
+         finSi
+       finPour
+      finPour
+      retourner trouvée
+   fin
+   
+Algorithme Recherch_Chaine
+   varaiables :
+      i,j : entier
+	  Tm [200] : carctére 
+	  T[20] : chaine
+      chaine_caractéres : chaine 	  
+   
+   début
+     //insertion de la taille des tableaux
+	  saisie()
+	  
+	 //Remplissage des tableaux
+	  pour i de 0 à taille_T - 1 faire
+	   répeter 
+	    écrire("entrez un élémnt du tableau T:)
+	    lire(T[i])
+	   jusqu'à((T[i] => 'a' et T[i] <= 'z') ou (T[i] => 'A' et T[i] <= 'Z'))
+	  finPour
+	  
+	  pour i de 0 à taille_Tm - 1 faire
+	   répeter 
+	    écrire("entrez un élémnt du tableau Tm :)
+	    lire(Tm[i])
+	   jusqu'à((Tm[i] => 'a' et Tm[i] <= 'z') ou (Tm[i] => 'A' et Tm[i] <= 'Z'))
+	  finPour
+
+     //Convertion du tableau Tm en chaine
+	  chaine_caractéres <-- " "
+      pour i de 0 à taille_Tm - 1 faire
+	    chaine_caractéres <-- chaine_caractéres + Tm[i]
+	  finPour
+	  
+	  //Traitement
+	   i <-- 0
+	   répeter
+	    chaine_cherchée <-- T[i]
+        si (Comparaison(chaine_caractéres ,T[i])) alors
+          écrire(" le mot est trouvé dans le tableau T")
+        finSi
+         i <-- i + 1
+       jusqu'à(i = taille_T) 		 
+   fin      	  
