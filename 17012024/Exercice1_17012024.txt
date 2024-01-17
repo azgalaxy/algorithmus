@@ -1,0 +1,68 @@
+Exercice 1 :
+1) TEMPS = Structure
+     heure : entier
+	 minute : entier
+	 seconde : entier
+   Fin Structure 
+
+2) fonction somme_temps (temps1 : structure TEMPS, temps2 : structure TEMPS) : Structure TEMPS
+     variables 
+	  temps_somme : structure TEMPS
+     début
+      temps_somme.seconde <-- temps1.seconde + temps2.seconde
+	  temps_somme.minute <-- temps1.minute + temps2.minute
+	  temps_somme.heure <-- temps1.heure + temps2.heure
+      si temps_somme.seconde => 60 alors
+        temps_somme.seconde <-- temps_somme.seconde - 60 
+        temps_somme.minute <-- temps_somme.minute + 1  
+        si temps_somme.minute => 60 alors
+          temps_somme.seconde <-- temps_somme.seconde - 60 		  
+		  temps_somme.heure <-- temps_somme.heure + 1
+		  si temps_somme.heure => 24 alors
+		    temps_somme.heure <-- temps_somme.heure - 24
+          finSi
+        finSi
+      finSi
+	  retourner temps_somme
+     fin
+	 
+
+3) fonction TRANSFORM (temps : structure TEMPS) : entier
+     variables 
+	  temps_secondes : entier
+	 début
+	  temps_secondes <-- temps.heure * 3600 + temps.minute* 60 + temps.seconde
+      retourner temps_secondes
+     fin
+
+4) procédure DECOMPOS (temps_secondes : entier) : Structure TEMPS
+     variables
+       T : structure TEMPS
+     début
+       T.heure <-- temps_secondes div 3600
+       T.minute <-- T.heure mod 60
+       T.seconde <-- T.minute mod 60
+       retourner T
+     fin
+
+5) Algorithme calcul_somme_Temps
+     variables 
+      T : structure TEMPS
+      T1 : structure TEMPS
+      T2 : structure TEMPS
+	  T1_seconde, T2_seconde : entier 
+	  somme : entier
+     début
+     //transformation en secondes des 2 temps
+       T1_seconde <-- TRANSFORM(T1)
+       T2_seconde <-- TRANSFORM(T2)
+     
+     //la sommee des temps en secondes 
+       S <-- T1_seconde + T2_seconde 
+      
+	 //Decomposition dde la somme en forme TEMPS
+	   DECOMPOS(S)
+	 fin
+     	
+	 
+  	 
