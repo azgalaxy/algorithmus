@@ -1,0 +1,61 @@
+Exercice 1 : page 37
+1-/ Type TEMPS = Enregistrement
+		Heure, minute, seconde : entier
+	Fin Enregistrement
+
+2-/ Procédure Somme_TEMPS (T1 : TEMPS, T2 : TEMPS, var  T : TEMPS) 
+		Variable : 
+			n : entier
+		
+		Début
+			n <-- 0
+			n <-- T1.seconde + T2.seconde
+			T.seconde = n mod 60
+			T.minute = n div 60
+			n <-- 0
+			n <-- T1.minute + T2.minute + T.minute
+			T.minute <-- n mod 60
+			T.Heure <--  n div 60 + T1.Heure + T2.Heure
+		Fin Procédure
+
+3-/ Fonction TRANSFORM (T : TEMPS) : entier
+		Variable :
+			t : entier
+		
+		Début
+			t <-- T.seconde + T.minute * 60 + T.Heure * 3600
+			Retourner t
+		Fin Fonction
+
+4-/ Procédure DECOMPOS (var T : TEMPS, var S : entier)
+		Début
+			T.Heure <-- S div 3600
+			S <-- S mod 3600
+			T.minute <-- S div 60
+			S <-- S mod 60
+			Ecrire("Le temps après décomposition est : ",T.Heure," h : ",T.minute," m : ",T.seconde," s .")
+		Fin Procédure
+
+5-/ Algorithme Totale
+		Type :
+		Type TEMPS = Enregistrement
+			Heure, minute, seconde : entier
+		Fin Enregistrement
+		Variable :
+			T1, T2, T : TEMPS
+			N : entier
+		
+		Début /*Ecrire , Lire Basic najjemù nesta3mel il "Avec"*/
+			Ecrire("Donnez T1 , Heure : "), Lire(T1.Heure)
+			Ecrire("Donnez T1 , Minute : "), Lire(T1.minute)
+			Ecrire("Donnez T1 , Seconde : "), Lire(T1.seconde)
+			Ecrire("Donnez T2 , Heure : "), Lire(T2.Heure)
+			Ecrire("Donnez T2 , Minute : "), Lire(T2.minute)
+			Ecrire("Donnez T2 , Seconde : "), Lire(T2.seconde)
+			N <-- TRANSFORM(T1) + TRANSFORM(T2)
+			DECOMPOS(T, N)
+		Fin Algorithme
+			
+		
+			
+			
