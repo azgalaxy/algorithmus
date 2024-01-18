@@ -1,0 +1,142 @@
+// 1. Déclaration d'un nombre complexe
+Algorithme Declaration_Complexe
+    variables
+        a, b : réel
+    début
+        // Saisie des parties réelle et imaginaire du nombre complexe
+        Lire a
+        Lire b
+        // Affichage du nombre complexe
+        Afficher "Le nombre complexe Z est : ", a, " + ", b, "i"
+    fin
+
+// 2. Fonctions ReelZ, ImagZ et Module pour les nombres complexes
+Algorithme ReelZ
+    // Fonction renvoyant la partie réelle d'un nombre complexe
+    fonction ReelZ(Z : Complexe) : réel
+    début
+        retourner Z.a
+    fin
+
+Algorithme ImagZ
+    // Fonction renvoyant la partie imaginaire d'un nombre complexe
+    fonction ImagZ(Z : Complexe) : réel
+    début
+        retourner Z.b
+    fin
+
+Algorithme Module
+    // Fonction renvoyant le module d'un nombre complexe
+    fonction Module(Z : Complexe) : réel
+    début
+        retourner RacineCarree(Z.a^2 + Z.b^2)
+    fin
+
+// 3. Actions paramétrées pour l'arithmétique sur les complexes : SommeZ, DiffZ, ProdZ
+Algorithme SommeZ
+    // Action paramétrée pour l'addition de deux nombres complexes
+    action_paramétrée SommeZ(Z1, Z2 : Complexe) : Complexe
+    début
+        retourner Complexe(Z1.a + Z2.a, Z1.b + Z2.b)
+    fin
+
+Algorithme DiffZ
+    // Action paramétrée pour la soustraction de deux nombres complexes
+    action_paramétrée DiffZ(Z1, Z2 : Complexe) : Complexe
+    début
+        retourner Complexe(Z1.a - Z2.a, Z1.b - Z2.b)
+    fin
+
+Algorithme ProdZ
+    // Action paramétrée pour la multiplication de deux nombres complexes
+    action_paramétrée ProdZ(Z1, Z2 : Complexe) : Complexe
+    début
+        retourner Complexe(Z1.a * Z2.a - Z1.b * Z2.b, Z1.a * Z2.b + Z1.b * Z2.a)
+    fin
+
+// 4. Procédure ConjZ
+Algorithme ConjZ
+    // Procédure calculant le conjugué d'un nombre complexe
+    procédure ConjZ(Z : Complexe)
+    début
+        Z.b <-- -Z.b
+    fin
+
+// 5. Fonction EgaleZ
+Algorithme EgaleZ
+    // Fonction testant l'égalité de deux nombres complexes
+    fonction EgaleZ(Z1, Z2 : Complexe) : booléen
+    début
+        retourner (Z1.a = Z2.a) ET (Z1.b = Z2.b)
+    fin
+
+// 6. Procédure EcrireZ
+Algorithme EcrireZ
+    // Procédure permettant d'afficher un nombre complexe
+    procédure EcrireZ(Z : Complexe)
+    début
+        Afficher "Le nombre complexe Z est : ", Z.a, " + ", Z.b, "i"
+    fin
+
+// Algorithme principal pour le tableau de nombres complexes
+Algorithme Traitement_Tableau_Complexes
+    variables
+        TC : tableau [1..100] de Complexe
+        N, i : entier
+        max_Module, module_Actuel : réel
+        indice_Max_Module : entier
+        Zs, Zp : Complexe
+    début
+        // Saisie de la taille du tableau
+        Lire N
+
+        // Saisie des éléments du tableau TC
+        Pour i de 1 à N faire
+            Lire TC[i].a
+            Lire TC[i].b
+        Fin Pour
+
+        // Recherche de l'élément de TC ayant le plus grand module
+        max_Module <-- Module(TC[1])
+        indice_Max_Module <-- 1
+        Pour i de 2 à N faire
+            module_Actuel <-- Module(TC[i])
+            Si module_Actuel > max_Module Alors
+                max_Module <-- module_Actuel
+                indice_Max_Module <-- i
+            Fin Si
+        Fin Pour
+
+        // Affichage de l'élément de TC ayant le plus grand module
+        EcrireZ(TC[indice_Max_Module])
+
+        // Vérification de l'existence du conjugué dans TC
+        Si indice_Max_Module > 1 ET indice_Max_Module < N Alors
+            ConjZ(TC[indice_Max_Module])
+            Si EgaleZ(TC[indice_Max_Module], TC[indice_Max_Module + 1]) Alors
+                Afficher "Le conjugué existe dans le tableau."
+            Sinon
+                Afficher "Le conjugué n'existe pas dans le tableau."
+            Fin Si
+        Sinon
+            Afficher "Impossible de vérifier le conjugué."
+        Fin Si
+
+        // Calcul de la somme Zs et du produit Zp des éléments non nuls de TC
+        Zs <-- Complexe(0, 0)
+        Zp <-- Complexe(1, 0)
+        Pour i de 1 à N faire
+            Si Module(TC[i]) <> 0 Alors
+                Zs <-- SommeZ(Zs, TC[i])
+                Zp <-- ProdZ(Zp, TC[i])
+            Fin Si
+        Fin Pour
+
+        // Affichage de la différence entre Zs et Zp si elle est imaginaire pure
+        Si Zs.b <> 0 ET Zp.b <> 0 ET Zs.a = 0 ET Zp.a = 0 Alors
+            DiffZ(Zs, Zp)
+            EcrireZ(DiffZ)
+        Sinon
+            Afficher "La différence n'est pas imaginaire pure."
+        Fin Si
+    fin
