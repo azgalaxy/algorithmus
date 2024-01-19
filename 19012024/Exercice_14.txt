@@ -1,0 +1,74 @@
+Exercice 14 page 109:
+	Algorithme Transposition
+		Type : 
+			Saisir_taille, Saisir_matrice, Affichage : Procédure
+			Transpo : Procédure
+			matrice[3][3] : 
+			
+		Procédure Saisir_taille(var nombre : entier)
+			Début
+				Répéter
+					Ecire("Donnez la valeur de nombre : ")
+					Lire(nombre)
+				Jusqu'à(nombre > 0 ou nombre < 3)
+			Fin Procédure
+			
+		Procédure Saisir_matrice(var matrice[3][3] : , nombre : entier)
+			Variable :
+				i, j : entier
+			
+			Début
+				Pour i de 1 à nombre Faire
+					Pour j de 1 à nombre Faire
+						Ecrire("matrice[",i,"][",j,"] = ")
+						Lire(matrice[i][j])
+					Fin Pour
+				Fin Pour
+			Fin Procédure
+			
+		Procédure Affichage(matrice[3][3] : , nombre : entier)
+			Variable :
+				i, j : entier
+			
+			Début
+				Pour i de 1 à nombre Faire
+					Pour j de 1 à nombre Faire
+						Ecrire(matrice[i][j]," | ")
+					Fin Pour
+				Fin Pour
+			Fin Procédure
+		
+		Procédure Transpo(var matrice[3][3] : , nombre : entier)
+			Variable : 
+				x, i, j : entier
+			
+			Début
+				x <-- 0
+				Pour i de 1 à nombre Faire
+					Pour j de 1 à nombre Faire
+						x <-- matrice[i][j]
+						matrice[i][j] <-- matrice[j][i]
+						matrice[j][i] <-- x
+					Fin Pour
+				Fin Pour
+				
+				Pour i de 1 à nombre Faire
+					Pour j de 1 à nombre Faire
+						Ecrire(matrice[i][j]," | ")
+					Fin Pour
+				Fin Pour
+			Fin Procédure
+		
+		Algorithme Principale
+			Variable :
+				taille : entier
+			Début
+				Saisir_taille(taille)
+				Ecrire("Entrez les composants de la matrice : ")
+				Saisir_matrice(matrice, taille)
+				Ecrire("La Matrice saisie : ")
+				Affichage(matrice, taille)
+				Ecrire("La nouvelle matrice : ");
+				Transpo(matrice, taille)  
+			Fin 
+				

@@ -1,0 +1,74 @@
+Exerice 15 page 109 :
+	Algorithme Produit
+		Type :
+			
+		Variables :
+		
+		Procédure Saisir_taille(var nombre : entier)
+			Début
+				Répéter
+					Ecire("Donnez la valeur de nombre : ")
+					Lire(nombre)
+				Jusqu'à(nombre > 0 ou nombre < 3)
+			Fin Procédure
+		
+		Procédure Saisir_matrice(var matrice[3][3] : , nombre : entier)
+			Variable :
+				i, j : entier
+			
+			Début
+				Pour i de 1 à nombre Faire
+					Pour j de 1 à nombre Faire
+						Ecrire("matrice[",i,"][",j,"] = ")
+						Lire(matrice[i][j])
+					Fin Pour
+				Fin Pour
+			Fin Procédure
+			
+		Procédure Affichage(matrice[3][3] : , nombre : entier)
+			Variable :
+				i, j : entier
+			
+			Début
+				Pour i de 1 à nombre Faire
+					Pour j de 1 à nombre Faire
+						Ecrire(matrice[i][j]," | ")
+					Fin Pour
+				Fin Pour
+			Fin Procédure
+			
+		Procédure Produit(matrice1[3][3] : , matrice2[3][3] : , nombre : entier)
+			Variable : 
+				i, j, k :entier
+				sum[3][3] : matrice d'entiers
+				somme : entier
+				
+			Début
+				somme <-- 0
+				Pour i de 1 à nombre Faire
+					Pour j de 1 à nombre Faire
+						Pour k de 1 à nombre Faire
+							somme += matrice1[i][k] * matrice2[k][j]
+						Fin Pour
+						sum[i][j] <-- somme
+					Fin Pour
+				Fin Pour
+				Fin Procédure
+					
+			
+		Algorithme Principale
+			Variable :
+				taille : entier
+			Début
+				Saisir_taille(taille)
+				Ecrire("Entrez les composants de la 1er matrice : ")
+				Saisir_matrice(matrice1, taille)
+				Ecrire("Entrez les composants de la 2éme matrice : ")
+				Saisir_matrice(matrice2, taille)
+				Ecrire("La Matrice1 saisie : ")
+				Affichage(matrice1, taille)
+				Ecrire("La Matrice2 saisie : ")
+				Affichage(matrice2, taille)
+				Ecrire("La nouvelle matrice : ");
+				Produit(matrice1, matrice2, taille)  
+			Fin 
