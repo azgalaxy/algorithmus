@@ -1,0 +1,40 @@
+Algorithme Multiplication_matrice
+    variables :
+        matrice1[3][3] : entier
+		matrice2[3][3] : entier
+		matrice_resultat[3][3] : entier
+        i, j, k : entier
+
+    debut
+	    //Remplissage de la matrice 1
+        pour i de 0 à 2 faire
+          pour j de 0 à 2 faire 
+	        écrire("entrez un élément de la matrice : ")
+       	    lire(matrice1[i][j])  
+          finPour
+	    finPour
+
+        //Remplissage de la matrice 2 		
+        pour i de 0 à 2 faire
+          pour j de 0 à 2 faire 
+	        écrire("entrez un élément de la matrice : ")
+       	    lire(matrice2[i][j])  
+          finPour
+	    finPour	
+	
+        // Calcul du produit matriciel
+        pour i de 0 à 2 faire
+            pour j de 0 à 2 faire
+                pour k de 0 à 2 faire
+                    matrice_resultat[i][j] <-- matrice1[i][k] * matrice2[k][j]
+                fin Pour
+            fin Pour
+        fin Pour
+
+        // Affichage de la matrice résultat
+        pour i de 0 à 2 faire
+            pour j de 0 à 2 faire
+                ecrire(matrice_resultat[i][j])
+            Fin Pour
+        fin Pour
+    fin

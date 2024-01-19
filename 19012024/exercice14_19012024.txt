@@ -1,0 +1,35 @@
+Exercice 14 :
+Algorithme matrice_transposée
+   variables
+    i : entier
+	j : entier
+	matrice_originale[3][3] : entier
+	matrice_transposée[3][3] : entier
+   début
+    //remplissage du tableau 
+     pour i de 0 à 2 faire
+      pour j de 0 à 2 faire 
+	    écrire("entrez un élément de la matrice : ")
+       	lire(matrice_originale[i][j])  
+      finPour
+	 finPour 
+    
+	//l'operation de transposage  
+    pour i de 0 à 2 faire
+      pour j de 0 à 2 faire
+        si i = j alors
+          matrice_transposee[i][j] = matrice_originale[j][i]
+        sinon
+           matrice_transposee[i][j] = matrice_originale[i][j]
+        finSi
+      finPour
+    finPour
+	
+	//affichage de la matrice transposée
+	ecrire("la matrice transposé est : ")
+	pour i de 0 à 2 faire
+	  pour j de 0 à 2 faire 
+	    ecrire(matrice_transposee[i][j])
+	  finPour
+	finPour
+   fin
