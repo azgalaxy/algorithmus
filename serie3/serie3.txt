@@ -1,0 +1,91 @@
+//EXERCICE1
+Algorithme Distributeur
+	n, rest, b100, b50, b10, b5, p2, p1 : entier
+début
+	Entrer("Entrez la valeur demandée: ")
+	Lire(n)
+
+	b100 <-- n DIV 100
+	rest <-- n MOD 100
+
+	b50 <-- rest DIV 50
+	rest <-- rest MOD 50
+	
+	b10 <-- rest DIV 10
+	rest <-- rest MOD 10	
+	
+	b5 <-- rest DIV 5 
+	rest <-- rest MOD 5
+	
+	p2 <-- rest DIV 2
+	rest <-- rest MOD 2
+	
+	p1 <-- rest
+
+	Entrer("La monnaie de n en billets de 100, de 50, de 10, de 5 dinars, ainsi qu'en pièces de 2 et 1 dinars : ",
+	       b100, b50, b10, b5, p2, p1)
+Fin
+
+//EXERCICE2
+Algorithme Convertir_nombre_en_mois_et_jour
+Variables:
+	Tableau mois_jours[12] : entier
+	Tableau mois_noms[12] : entier
+	nombre : entier
+	i : entier
+	jours : entier
+	rest : entier
+	trouvé : booléan
+début
+	mois_noms[0] <-- "Janvier"
+	mois_jours[0] <-- 31
+	mois_noms[1] <-- "Février"
+	mois_jours[1] <-- 28
+	mois_noms[2] <-- "Mars"
+	mois_jours[2] <-- 31
+	mois_noms[3] <-- "Avril"
+	mois_jours[3] <-- 30
+	mois_noms[4] <-- "Mai"
+	mois_jours[4] <-- 31
+	mois_noms[5] <-- "Juin"
+	mois_jours[5] <-- 30
+	mois_noms[5] <-- "Juillet"
+	mois_jours[6] <-- 31
+	mois_noms[7] <-- "Août"
+	mois_jours[7] <-- 31
+	mois_noms[8] <-- "Septembre"
+	mois_jours[8] <-- 30
+	mois_noms[9] <-- "Octobre"
+	mois_jours[9] <-- 31
+	mois_noms[10] <-- "Novembre"
+	mois_jours[10] <-- 30
+	mois_noms[11] <-- "Décembre"
+	mois_jours[11] <-- 31
+
+	Répéter
+		Ecrire("Entrez un nombre entre 0 et 365: ")
+		Lire(nombre)
+	Jusqu’à nombre >= 0 ET nombre <= 365 Faire
+
+    rest <-- nombre
+	trouvé <-- false
+    i <-- 0
+
+	Tanque trouvé = false Faire
+        jours <-- rest - months[i]
+        Si rest <= 0 Alors
+           trouvé = true 
+        SiNon
+           rest <-- jours
+           i <-- i + 1
+		FinSi   
+    FinTanque
+    Ecrire ("Mois/Jour",  mois_noms[i], jours)	
+Fin
+	
+
+
+
+	                                                                                                                                                            
+
+

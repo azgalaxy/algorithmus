@@ -1,0 +1,253 @@
+// EXERCICE1
+Algorithme moyen
+Variables
+    n1: réel
+    n2: réel
+    n3: réel
+    moyen: réel
+    np1: bool
+    np2: bool
+    np3: bool
+Début
+    Ecrire("Entrez la première note : ")
+    Lire(n1)
+
+    Ecrire("Entrez la deuxième note : ")
+    Lire(n2)
+
+    Ecrire("Entrez la troisième note : ")
+    Lire(n3)
+
+    Si n1 > 9 Alors
+        np1 <- vrai
+    Sinon
+        np1 <- faux
+    FinSi
+
+    Si n2 > 9 Alors
+        np2 <- vrai
+    Sinon
+        np2 <- faux
+    FinSi
+
+    Si n3 > 9 Alors
+        np3 <- vrai
+    Sinon
+        np3 <- faux
+    FinSi
+
+    Si np1 = vrai et np2 = vrai et np3 = vrai Alors
+        Ecrire("Admis")
+    FinSi
+
+    moyen <- n1 + n2 + n3
+
+    Si n1 = 8 ou n2 = 8 ou n3 = 8 Alors
+        Si moyen >= 10 Alors
+            Ecrire("Admis")
+        FinSi
+    FinSi
+Fin
+
+// EXERCICE2
+Algorithme salary
+Variables
+    su: réel
+    sd: réel
+    s: réel
+    s1: réel
+    s2: réel
+    s3: réel
+Début
+    Ecrire("Le prix unitaire d'une heure : ")
+    Lire(su)
+
+    s <- 39 * su
+    s1 <- s + ((s * 50) / 100)
+    s2 <- s + ((s * 75) / 100)
+    s3 <- s * 2
+
+    Ecrire("Donner la salaire : ")
+    Lire(sd)
+
+    Si sd >= s1 et sd < s2 Alors
+        Ecrire("il a travaillé entre 40 heures et 44 heures")
+    FinSi
+
+    Si sd >= s2 et sd < s3 Alors
+        Ecrire("il a travaillé entre 45 heures et 49 heures")
+    FinSi
+
+    Si sd >= s3 Alors
+        Ecrire("il a travaillé 50 heures ou plus")
+    FinSi
+
+    Si sd < s1 Alors
+        Ecrire("Il travaille exactement !")
+    FinSi
+Fin
+
+// EXERCICE 3 
+Algorithme date
+
+
+Variables
+    day: entier
+    month: entier
+    year: entier
+    max_jours: entier
+    mois: tableau
+
+Début
+    mois[0] <-- 31
+    mois[1] <-- 28
+    mois[2] <-- 31
+    mois[3] <-- 30
+    mois[4] <-- 31
+    mois[5] <-- 30
+    mois[6] <-- 31
+    mois[7] <-- 31
+    mois[8] <-- 30
+    mois[9] <-- 31
+    mois[10] <-- 30
+    mois[11] <-- 31
+
+    Ecrire("Entrez le jour : ")
+    Lire(day)
+
+    Ecrire("Entrez le mois : ")
+    Lire(month)
+
+    Ecrire("Entrez l'année : ")
+    Lire(year)
+
+    day <- day + 1
+
+    Si day > mois[month - 1] Alors
+        day <- 1
+        month <- month + 1
+    FinSi
+
+    Si month > 12 Alors
+        month <- 1
+        year <- year + 1
+    FinSi
+
+    Ecrire("Jour : ", day, " Mois : ", month, " Année : ", year)
+Fin
+
+
+//EXERCICE 6
+algorithme sorté
+variables
+	n1: réel
+	n2: réel
+	n3: réel
+
+	min: réel
+	max
+début
+	Ecrire("Entrez le premier nombre: ")
+	Lire(n1)
+
+	Ecrire("Entrez le deuxiéme nombre: ")
+	Lire(n2)
+
+	Ecrire("Entrez le troisiéme nombre: ")
+	Lire(n3)
+
+	min <- n1
+	max <- n1
+
+	Si n2 < min alors
+		min <- n2
+	FinSi
+
+	Si n3 < min alors
+		min <- n3
+	FinSi
+
+	Si n2 > max alors
+		max <- n2
+	FinSi
+
+	Si n3 > max alors
+		max <- n3
+	FinSi
+
+
+	Ecrire("Le minimum est: ",min)
+	Ecrire("Le maximum est ",max)
+
+Fin
+
+
+//EXERCICE 8
+variable
+	x: entier
+	y: entier
+	x_x: entier
+	x_2_y: entier
+	y_y: entier
+	z: entier
+début
+
+	Ecrire("Entrez x: ")
+	Lire(x)
+	Ecrire("Entrez y: ") 
+	Lire(y)
+
+	x_x <- x*x
+	x_2_y <- x*2*y
+	y_y <- y*y
+
+
+	z = x_x + x_2_y + y_y
+
+	Ecrire("(x+y)² = z")
+Fin
+
+
+//EXERCICE9
+Algorithme binary
+variables
+	x: entier
+	y: entier
+	binary: entier
+	rest: entier
+début
+	Ecrire("Entrez x: ")
+	Lire(x)
+	
+	binary <- ""
+	
+	Tanque x > 0 
+		rest <- x mod 2
+		x <- x div 2
+		binary <- rest + binary
+	FinTanQue
+
+	print("le nombre est ",binary)
+Fin
+	
+	
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	

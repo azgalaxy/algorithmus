@@ -1,0 +1,104 @@
+181220223
+//EXERCICE1
+fonction Saisie(a: entier, b: entier, Td: Tableau, Te: Tableau): Tableau
+  Variables
+      i,j: entier
+  Début
+    Pour i de 1 à a Faire
+      Ecrire("Entrez un element: ")
+      Lire(Td[i])
+    FinPour
+ 
+    Pour j de 1 à b Faire
+      Ecrire("Entrez un element: ")
+      Lire(Te[j])
+    FinPour
+
+    Retourner Te,TD 
+Algorithme order
+Variables
+  Te,Td: Tableau d'entier
+  a,b,i,j: Entier
+Début
+    Te <- []
+    Td <- []
+    i,j <- 0
+     
+    Repeter 
+       Ecrire("Entrez a: ")
+       Lire(a)
+    Jusqu'a (4<=a<=20)
+
+    Repeter
+       Ecrire("Entrez b: ")
+       Lire(b)
+    Jusqu'a (5<=b<=20)
+
+    Tanque i < long(td) et j < long(te) faire
+      Si td[i] = te[j] Alors
+        i = i +1
+      FinSi
+      j = j+1
+    FinTanQue
+
+    Saisie(a,b,Td,Te)
+    
+    Si i = long(td) Faire
+      Ecrire("td is a subarray of te")
+    SiNon
+      Ecrire("td is not a subarray of te")
+    FinSi
+Fin
+
+
+//EXERCICE 2 
+Fonction  Fill_1(T: Tableau, a: Entier): tableau
+  Variables
+      i: entier
+  Début
+    Pour i de 1 à a Faire
+      Ecrire("Entrez l'element: ")
+      lire(T[i])
+    FinPour
+    Retourner T
+  Fin
+
+Fonction Fill_2(T2: Tableau, b: Entier): tableau
+  Variables
+     i: entier
+  Début
+   Pour i de 1 à b Faire
+     Ecrire("Entrez l'element: ")
+     Lire(T2[i])
+   FinPour
+   Retourner T
+  Fin
+
+Algorithme Divisuer
+Variables
+   T1,T2 : tableau
+   a,b: entier
+   pos: entier
+Début
+   T1 <- []
+   T2 <- []
+
+   Ecrire("Entrez la taille de la premier tableau: ")
+   lire(a)
+
+   Ecrire("Entrez la taille de la premier tableau: ")
+   Lire(b)
+
+   Fill_1(T1,a)
+   Fill_2(T2,b)
+
+   Ecrire("Entrez la postion")
+   Lire(pos)
+
+   Pour i de 1 à long(T2) Faire
+     Si T1[pos] mod T2[i] = 0 Alors
+        Ecrire(T2[i])
+     FinSi
+   FinPour
+Fin
+  
